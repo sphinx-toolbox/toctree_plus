@@ -1,0 +1,6 @@
+include __pkginfo__.py
+include LICENSE
+include requirements.txt
+recursive-exclude **/__pycache__ *
+recursive-include sphinxcontrib/toctree_plus *.pyi
+include sphinxcontrib/toctree_plus/py.typed

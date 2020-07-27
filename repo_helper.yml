@@ -1,0 +1,61 @@
+modname: toctree_plus
+import_name: sphinxcontrib.toctree_plus
+copyright_years: "2020"
+author: "Dominic Davis-Foster"
+email: "dominic@davis-foster.co.uk"
+version: "0.0.0"
+username: "domdfcoding"
+license: 'BSD'
+short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
+
+enable_conda: False
+enable_tests: False
+
+exclude_files:
+  - bumpversion
+  - rtfd
+
+conda_channels:
+  - domdfcoding
+  - conda-forge
+
+python_deploy_version: 3.6
+
+# Additional lines for .gitignore
+additional_ignore:
+#  Editors
+  - "*~"
+  - ".*.swp"
+  - ".*sw?"
+
+
+# Versions to run tests for
+python_versions:
+  - '3.6'
+  - '3.7'
+  - '3.8'
+  - '3.9-dev'
+
+# travis secure password for PyPI
+#travis_pypi_secure:
+
+classifiers:
+  - 'Development Status :: 4 - Beta'
+#  - "Development Status :: 5 - Production/Stable"
+#  - "Development Status :: 6 - Mature"
+#  - "Development Status :: 7 - Inactive"
+  - 'Intended Audience :: Developers'
+  - 'Operating System :: OS Independent'
+  - 'Programming Language :: Python'
+  - "Framework :: Sphinx :: Extension"
+  - 'Topic :: Software Development :: Libraries :: Python Modules'
+  - "Topic :: Utilities"
+  - "Topic :: Documentation"
+
+
+extra_sphinx_extensions:
+  - "sphinx.ext.autosummary"
+
+keywords:
+  - sphinx
+  - sphinx-extension

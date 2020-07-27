@@ -1,0 +1,43 @@
+# This file is managed by 'repo_helper'. Don't edit it directly.
+---
+
+language: python
+dist: xenial
+cache: pip
+python:
+  - '3.6'
+  - '3.7'
+  - '3.8'
+  - '3.9-dev'
+
+install:
+
+  - pip install pip  --upgrade
+  - pip install tox tox-travis
+
+
+script:
+  - tox
+
+
+stages:
+  - test
+  - deploy_pypi
+
+
+
+jobs:
+  include:
+    - stage: deploy_pypi
+      python: "3.6"
+      script: skip
+      deploy:
+        on:
+          tags: true
+          repo: domdfcoding/toctree_plus
+        provider: pypi
+        user: "DomDF"
+        password:
+          secure:
+        distributions: "sdist bdist_wheel"
+        skip_existing: true
