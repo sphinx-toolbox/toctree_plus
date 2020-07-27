@@ -39,7 +39,7 @@ __copyright__ = """
 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-__version__ = "0.0.0"
+__version__ = "0.0.1"
 modname = "toctree_plus"
 pypi_name = "toctree_plus"
 import_name = "sphinxcontrib.toctree_plus"

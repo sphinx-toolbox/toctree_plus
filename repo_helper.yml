@@ -3,7 +3,7 @@ import_name: sphinxcontrib.toctree_plus
 copyright_years: "2020"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
-version: "0.0.0"
+version: "0.0.1"
 username: "domdfcoding"
 license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
