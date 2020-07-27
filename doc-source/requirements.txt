@@ -1,7 +1,6 @@
 autodocsumm
-default_values>=0.0.4
+default_values>=0.0.6
 extras_require
-sphinx>=3.0.3
 sphinx-copybutton>=0.2.12
 sphinx-notfound-page
 sphinx-prompt>=1.2.0

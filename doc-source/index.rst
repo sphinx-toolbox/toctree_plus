@@ -1,5 +1,5 @@
 ================
-toctree_plus
+.. toctree:: +
 ================
 
 .. start shields
@@ -113,7 +113,7 @@ Enable ``toctree_plus`` by adding "sphinxcontrib.toctree_plus" to the ``extensio
 
 .. code-block:: python
 
-    extensions = [
+	extensions = [
 		...
 		"sphinxcontrib.toctree_plus",
 		]

@@ -1,5 +1,5 @@
 ================
-toctree_plus
+.. toctree:: +
 ================
 
 .. start short_desc
