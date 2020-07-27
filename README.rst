@@ -2,6 +2,12 @@
 toctree_plus
 ================
 
+.. start short_desc
+
+**Enhanced Sphinx TocTree that shows classes and functions as if they were sections.**
+
+.. end short_desc
+
 .. start shields
 
 .. list-table::

@@ -1,5 +1,5 @@
 autodocsumm
-default_values
+default_values>=0.0.4
 extras_require
 sphinx>=3.0.3
 sphinx-copybutton>=0.2.12
