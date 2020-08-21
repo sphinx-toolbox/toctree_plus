@@ -7,10 +7,9 @@ Enhanced Sphinx TocTree that shows classes and functions as if they were section
 """
 
 # stdlib
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional, Type, TypeVar
 
 # 3rd party
-from typing import List, TypeVar, Type
 from docutils import nodes
 from sphinx import addnodes
 from sphinx.application import Sphinx
