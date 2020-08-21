@@ -16,7 +16,6 @@ sys.path.append(os.path.abspath('..'))
 from __pkginfo__ import __version__
 
 # User-configurable lines
-toctree_plus_types = {"class", "function", "method", "data"}
 html_logo = "../toctree_plus.png"
 latex_logo = "../toctree_plus.png"
 # End of user-configurable lines
@@ -101,6 +100,7 @@ latex_documents = [('index', f'{slug}.tex', project, author, 'manual')]
 man_pages = [('index', slug, project, [author], 1)]
 texinfo_documents = [('index', slug, project, author, slug, project, 'Miscellaneous')]
 
+toctree_plus_types = {"class", "function", "method", "data"}
 
 autodoc_default_options = {
 		'members': None,  # Include all members (methods).

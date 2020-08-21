@@ -109,7 +109,7 @@ Installation
 
 .. end installation
 
-Enable ``toctree_plus`` by adding "sphinxcontrib.toctree_plus" to the ``extensions`` variable in ``conf.py``:
+Enable ``toctree_plus`` by adding ``"sphinxcontrib.toctree_plus"`` to the ``extensions`` variable in ``conf.py``:
 
 .. code-block:: python
 

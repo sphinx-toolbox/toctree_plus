@@ -62,6 +62,5 @@ keywords:
 
 
 sphinx_conf_preamble:
-  - toctree_plus_types = {"class", "function", "method", "data"}
   - html_logo = "../toctree_plus.png"
   - latex_logo = "../toctree_plus.png"
