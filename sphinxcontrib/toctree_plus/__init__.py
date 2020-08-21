@@ -26,6 +26,8 @@ __license__: str = "BSD"
 __version__: str = "0.0.1"
 __email__: str = "dominic@davis-foster.co.uk"
 
+__all__ = ["TocTreePlusCollector", "setup"]
+
 # For type hinting install docutils-stubs
 
 N = TypeVar('N')
@@ -134,7 +136,7 @@ class TocTreePlusCollector(TocTreeCollector):
 					# Add class, function and method directives to toctree.
 					# (doesn't currently work for method directives - are they nested?)
 
-					if sectionnode.attributes["objtype"] in {"class", "function", "method"}:
+					if sectionnode.attributes["objtype"] in set(app.env.config.toctree_plus_types):
 						attributes = sectionnode.children[0].attributes  # type: ignore
 						title = attributes["fullname"]
 						anchorname = '#' + attributes["ids"][0]
@@ -191,6 +193,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	:return:
 	"""
 
+	# Set of types to add to toctree
+	app.add_config_value('toctree_plus_types', {"class", "function", "method"}, 'env')
 	app.add_env_collector(TocTreePlusCollector)
 
 	return {

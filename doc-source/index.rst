@@ -120,10 +120,11 @@ Enable ``toctree_plus`` by adding "sphinxcontrib.toctree_plus" to the ``extensio
 
 For more information see https://www.sphinx-doc.org/en/master/usage/extensions/index.html#third-party-extensions .
 
-Future Enhancements
----------------------
+Configuration
+^^^^^^^^^^^^^^^^
 
-* Support different methods of defining the requirements, e.g. ``setup.py`` or ``pyproject.toml``.
+There is currently only a single configuration option: ``toctree_plus_types``.
+This determines the directive types that appear in the toctree. The default value is ``{"class", "function", "method"}``.
 
 
 .. toctree::
@@ -136,9 +137,10 @@ Future Enhancements
 	:maxdepth: 3
 	:caption: Documentation
 
+	Demo<demo>
 	API Reference<docs>
+	contributing
 	Source
-	Building
 
 .. start links
 
