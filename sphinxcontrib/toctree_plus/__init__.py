@@ -8,6 +8,7 @@ Enhanced Sphinx TocTree that shows classes and functions as if they were section
 
 # stdlib
 import os
+from pprint import pprint
 from typing import Any, Dict, List, Optional, Type, TypeVar
 
 # 3rd party
