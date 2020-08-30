@@ -7,6 +7,7 @@ Enhanced Sphinx TocTree that shows classes and functions as if they were section
 """
 
 # stdlib
+import os
 from typing import Any, Dict, List, Optional, Type, TypeVar
 
 # 3rd party
@@ -32,6 +33,9 @@ __all__ = ["TocTreePlusCollector", "setup"]
 N = TypeVar('N')
 
 logger = logging.getLogger(__name__)
+
+# Used to print information about types not currently enabled.
+TOCTREE_PLUS_DEBUG = os.environ.get("TOCTREE_PLUS_DEBUG", 0)
 
 
 class TocTreePlusCollector(TocTreeCollector):
@@ -137,7 +141,8 @@ class TocTreePlusCollector(TocTreeCollector):
 
 					if sectionnode.attributes["objtype"] in set(app.env.config.toctree_plus_types):
 						attributes = sectionnode.children[0].attributes  # type: ignore
-						title = attributes["fullname"]
+
+						title = attributes.get("fullname", sectionnode.children[0].astext())
 						anchorname = '#' + attributes["ids"][0]
 
 						reference = nodes.reference(
@@ -152,6 +157,9 @@ class TocTreePlusCollector(TocTreeCollector):
 						item = nodes.list_item('', para)
 
 						entries.append(item)
+					elif TOCTREE_PLUS_DEBUG:
+						print(sectionnode)
+						pprint(sectionnode.attributes["objtype"])
 
 				elif isinstance(sectionnode, addnodes.only):
 					onlynode = addnodes.only(expr=sectionnode['expr'])
