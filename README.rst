@@ -80,7 +80,7 @@
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/toctree_plus
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/toctree_plus/v0.0.3
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/toctree_plus/v0.0.4
 	:target: https://github.com/domdfcoding/toctree_plus/pulse
 	:alt: GitHub commits since tagged version
 
