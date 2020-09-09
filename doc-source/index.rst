@@ -103,22 +103,17 @@ Installation
 
 .. end installation
 
-Enable ``toctree_plus`` by adding ``"sphinxcontrib.toctree_plus"`` to the ``extensions`` variable in ``conf.py``:
-
-.. code-block:: python
-
-	extensions = [
-		...
-		"sphinxcontrib.toctree_plus",
-		]
-
-For more information see https://www.sphinx-doc.org/en/master/usage/extensions/index.html#third-party-extensions .
+.. extensions:: toctree_plus
+	:import-name: sphinxcontrib.toctree_plus
 
 Configuration
-^^^^^^^^^^^^^^^^
+--------------
 
-There is currently only a single configuration option: ``toctree_plus_types``.
-This determines the directive types that appear in the toctree. The default value is ``{"class", "function", "method"}``.
+.. confval:: toctree_plus_types
+	:type: :class:`~typing.Dict`\[:class:`str`\]
+	:default: ``{"class", "function", "method"}``
+
+	This determines the directive types that appear in the toctree.
 
 
 .. toctree::
@@ -133,6 +128,11 @@ This determines the directive types that appear in the toctree. The default valu
 
 	Demo<demo>
 	API Reference<docs>
+
+.. toctree::
+	:maxdepth: 3
+	:caption: Contributing
+
 	contributing
 	Source
 
