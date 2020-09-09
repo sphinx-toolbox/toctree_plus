@@ -1,2 +1,2 @@
-docutils
-sphinx>=3.0.0
+docutils>=0.16
+sphinx>=3.0.3
