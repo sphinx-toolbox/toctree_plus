@@ -32,7 +32,7 @@ Enhanced Sphinx TocTree that shows classes and functions as if they were section
 # stdlib
 import os
 from pprint import pprint
-from typing import Any, Dict, List, Optional, Type, TypeVar
+from typing import Any, Dict, List, Optional, Set, Type, TypeVar
 
 # 3rd party
 from docutils import nodes
@@ -224,7 +224,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	"""
 
 	# Set of types to add to toctree
-	app.add_config_value('toctree_plus_types', {"class", "function", "method"}, 'env')
+	app.add_config_value('toctree_plus_types', {"class", "function", "method"}, 'env', [Set[str]])
 	app.add_env_collector(TocTreePlusCollector)
 
 	return {
