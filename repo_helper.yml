@@ -9,7 +9,6 @@ license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
 
 enable_conda: False
-enable_tests: False
 
 exclude_files:
   - bumpversion
@@ -59,7 +58,6 @@ extra_sphinx_extensions:
 keywords:
   - sphinx
   - sphinx-extension
-
 
 sphinx_conf_preamble:
   - html_logo = "../toctree_plus.png"

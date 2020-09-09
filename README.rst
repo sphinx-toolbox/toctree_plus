@@ -17,7 +17,7 @@
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -27,7 +27,7 @@
 
 .. |docs| image:: https://img.shields.io/readthedocs/toctree_plus/latest?logo=read-the-docs
 	:target: https://toctree_plus.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/toctree_plus/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/toctree_plus/actions?query=workflow%3A%22Docs+Check%22
@@ -48,6 +48,10 @@
 .. |requires| image:: https://requires.io/github/domdfcoding/toctree_plus/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/toctree_plus/requirements/?branch=master
 	:alt: Requirements Status
+
+.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/toctree_plus/master?logo=coveralls
+	:target: https://coveralls.io/github/domdfcoding/toctree_plus?branch=master
+	:alt: Coverage
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/toctree_plus?logo=codefactor
 	:target: https://www.codefactor.io/repository/github/domdfcoding/toctree_plus
