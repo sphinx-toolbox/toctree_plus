@@ -22,7 +22,6 @@ from sphinx.util import logging
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
-
 __license__: str = "BSD"
 __version__: str = "0.0.3"
 __email__: str = "dominic@davis-foster.co.uk"
@@ -45,7 +44,6 @@ class TocTreePlusCollector(TocTreeCollector):
 	that includes classes and functions in the toctree as if they were sections.
 
 	.. TODO:: Nested functions, classes and methods
-
 	"""
 
 	def process_doc(self, app: Sphinx, doctree: nodes.document) -> None:
@@ -142,6 +140,9 @@ class TocTreePlusCollector(TocTreeCollector):
 
 					if sectionnode.attributes["objtype"] in set(app.env.config.toctree_plus_types):
 						attributes = sectionnode.children[0].attributes  # type: ignore
+						if not attributes["ids"]:
+							# Has no anchor
+							continue
 
 						title = attributes.get("fullname", sectionnode.children[0].astext())
 						anchorname = '#' + attributes["ids"][0]
