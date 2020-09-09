@@ -7,6 +7,7 @@ import sys
 # 3rd party
 import pytest
 from bs4 import BeautifulSoup  # type: ignore
+from domdf_python_tools.stringlist import StringList
 from pytest_regressions.file_regression import FileRegressionFixture  # type: ignore
 
 
@@ -45,4 +46,8 @@ def remove_html_footer(page: BeautifulSoup) -> BeautifulSoup:
 
 
 def check_html_regression(page: BeautifulSoup, file_regression: FileRegressionFixture):
-	file_regression.check(contents=remove_html_footer(page).prettify(), extension=".html", encoding="UTF-8")
+	file_regression.check(
+			contents=str(StringList(remove_html_footer(page).prettify())),
+			extension=".html",
+			encoding="UTF-8",
+			)
