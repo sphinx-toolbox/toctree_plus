@@ -55,6 +55,13 @@ extras_require = {'all': []}
 
 
 
+conda_description = """Enhanced Sphinx TocTree that shows classes and functions as if they were sections.
+
+
+Before installing please ensure you have added the following channels: domdfcoding, conda-forge"""
+__all__.append("conda_description")
+
+
 project_urls = {
 		"Documentation": "https://toctree_plus.readthedocs.io",
 		"Issue Tracker": f"{github_url}/issues",

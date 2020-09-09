@@ -8,8 +8,6 @@ username: "domdfcoding"
 license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
 
-enable_conda: False
-
 exclude_files:
   - bumpversion
   - rtfd

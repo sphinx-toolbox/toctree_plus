@@ -20,6 +20,8 @@
 	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+	* - Anaconda
+	  - |conda-version| |conda-platform|
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
 	* - Other
@@ -73,6 +75,14 @@
 	:target: https://pypi.org/project/toctree_plus/
 	:alt: PyPI - Wheel
 
+.. |conda-version| image:: https://img.shields.io/conda/v/domdfcoding/toctree_plus?logo=anaconda
+	:target: https://anaconda.org/domdfcoding/toctree_plus
+	:alt: Conda - Package Version
+
+.. |conda-platform| image:: https://img.shields.io/conda/pn/domdfcoding/toctree_plus?label=conda%7Cplatform
+	:target: https://anaconda.org/domdfcoding/toctree_plus
+	:alt: Conda - Platform
+
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/toctree_plus
 	:target: https://github.com/domdfcoding/toctree_plus/blob/master/LICENSE
 	:alt: License
@@ -102,13 +112,28 @@ Installation
 
 .. start installation
 
-``toctree_plus`` can be installed from PyPI.
+``toctree_plus`` can be installed from PyPI or Anaconda.
 
 To install with ``pip``:
 
 .. code-block:: bash
 
 	$ python -m pip install toctree_plus
+
+To install with ``conda``:
+
+	* First add the required channels
+
+	.. code-block:: bash
+
+		$ conda config --add channels http://conda.anaconda.org/domdfcoding
+		$ conda config --add channels http://conda.anaconda.org/conda-forge
+
+	* Then install
+
+	.. code-block:: bash
+
+		$ conda install toctree_plus
 
 .. end installation
 
