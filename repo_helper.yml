@@ -1,3 +1,4 @@
+---
 modname: toctree_plus
 import_name: sphinxcontrib.toctree_plus
 copyright_years: "2020"
@@ -9,55 +10,53 @@ license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
 
 exclude_files:
-  - bumpversion
-  - rtfd
+ - bumpversion
+ - rtfd
 
 conda_channels:
-  - domdfcoding
-  - conda-forge
+ - domdfcoding
+ - conda-forge
 
 python_deploy_version: 3.6
 
 # Additional lines for .gitignore
 additional_ignore:
 #  Editors
-  - "*~"
-  - ".*.swp"
-  - ".*sw?"
+ - "*~"
+ - ".*.swp"
+ - ".*sw?"
 
 
 # Versions to run tests for
 python_versions:
-  - '3.6'
-  - '3.7'
-  - '3.8'
-  - '3.9'
-  - '3.10-dev'
+ - '3.6'
+ - '3.7'
+ - '3.8'
+ - '3.9'
+ - '3.10-dev'
 
 # travis secure password for PyPI
 travis_pypi_secure: "RQ7OMMqX1798qCLL6xRVcLzo+iGAYLMZO3Uren4ciho1zSD9YeKUCVmjMIbv9Tyqsip8tZhVW/bFg+kmIecWFto7qP7yf3+jgcusriXxJGQLXtX6WJFuSESKFTHVCHZ6e9BhaSM1qeCUJYpUKbiZn8BiWrBZxdAFl+sEjTxkgZt84arUGSMouxFqsNcikT9reyFvhZ+npC6Vv2Dwa9IyEUKtXZ3j/XG9D6k1KOuh64DtPVlJAqQEPWVbRczoP4+gegrtvX9479h1D+ykoAVD1lTTkjsCglFFU24wpmovyzaQaarbL0G8/aTNZRHZXYN1c+mrTIeCwrFg4KCT3rkrWW4zM3TJSV9JmL1nd2gkhuK2sK3oeR7uxVHRSKeqUlmSzlzNXlLrOA6eovFIiKR8HVhlTcdL8UOqE3HCrPa2SwxYQ8ae+X8foeZQvFlPsUyjpmOApwHHThyuD1egbXcpvzIBM9Fk7Du8GW4QE9zHwNLoAG31jtMIKXN84EG3IzW2mXHq+YK4tSl6DvLwZvKL2sFGEZTyL0rbPFVLlZtNoF5PmC9F4wQY6a5fM27bqMsREhGsZfYd33GRjFAxY2rYWYTddrPeBBKEvNEq4QifjkNGodD/YuYWs7M6bmELyv5Vpw3wa2vutw8q51DbyW1QbkkEP6tFq5lhv9GvXlgjsvg="
 
 classifiers:
-  - 'Development Status :: 4 - Beta'
-#  - "Development Status :: 5 - Production/Stable"
-#  - "Development Status :: 6 - Mature"
-#  - "Development Status :: 7 - Inactive"
-  - 'Intended Audience :: Developers'
-  - 'Operating System :: OS Independent'
-  - 'Programming Language :: Python'
-  - "Framework :: Sphinx :: Extension"
-  - 'Topic :: Software Development :: Libraries :: Python Modules'
-  - "Topic :: Utilities"
-  - "Topic :: Documentation"
-
+ - 'Development Status :: 4 - Beta'
+ - "Framework :: Sphinx :: Extension"
+ - 'Intended Audience :: Developers'
+ - 'Operating System :: OS Independent'
+ - 'Programming Language :: Python'
+ - "Topic :: Documentation"
+ - 'Topic :: Documentation :: Sphinx'
+ - 'Topic :: Software Development :: Documentation'
+ - 'Topic :: Software Development :: Libraries :: Python Modules'
+ - "Topic :: Utilities"
 
 extra_sphinx_extensions:
-  - "sphinx.ext.autosummary"
+ - "sphinx.ext.autosummary"
 
 keywords:
-  - sphinx
-  - sphinx-extension
+ - sphinx
+ - sphinx-extension
 
 sphinx_conf_preamble:
-  - html_logo = "../toctree_plus.png"
-  - latex_logo = "../toctree_plus.png"
+ - html_logo = "../toctree_plus.png"
+ - latex_logo = "../toctree_plus.png"
