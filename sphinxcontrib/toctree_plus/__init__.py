@@ -162,7 +162,7 @@ class TocTreePlusCollector(TocTreeCollector):
 					# (doesn't currently work for method directives - are they nested?)
 
 					if sectionnode.attributes["objtype"] in set(app.env.config.toctree_plus_types):
-						attributes = sectionnode.children[0].attributes  # type: ignore
+						attributes = sectionnode.children[0].attributes
 						if not attributes["ids"]:
 							# Has no anchor
 							continue
@@ -176,7 +176,7 @@ class TocTreePlusCollector(TocTreeCollector):
 								internal=True,
 								refuri=docname,
 								anchorname=anchorname,
-								*[nodes.literal(text=title)],  # type: ignore
+								*[nodes.literal(text=title)],
 								)
 						para = addnodes.compact_paragraph('', '', reference)
 						item = nodes.list_item('', para)
