@@ -133,7 +133,7 @@ class TocTreePlusCollector(TocTreeCollector):
 						# as it is the file's title anyway
 						anchorname = ''
 					else:
-						anchorname = '#' + sectionnode['ids'][0]
+						anchorname = '#' + sectionnode["ids"][0]
 
 					numentries[0] += 1
 
@@ -187,7 +187,7 @@ class TocTreePlusCollector(TocTreeCollector):
 						pprint(sectionnode.attributes["objtype"])
 
 				elif isinstance(sectionnode, addnodes.only):
-					onlynode = addnodes.only(expr=sectionnode['expr'])
+					onlynode = addnodes.only(expr=sectionnode["expr"])
 					blist = build_toc(sectionnode, depth)
 					if blist:
 						onlynode += blist.children
@@ -224,7 +224,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	"""
 
 	# Set of types to add to toctree
-	app.add_config_value('toctree_plus_types', {"class", "function", "method"}, 'env', [Set[str]])
+	app.add_config_value("toctree_plus_types", {"class", "function", "method"}, "env", [Set[str]])
 	app.add_env_collector(TocTreePlusCollector)
 
 	return {
