@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``toctree_plus`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/toctree_plus"
+and can be accessed from the following URL: https://github.com/domdfcoding/toctree_plus
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
