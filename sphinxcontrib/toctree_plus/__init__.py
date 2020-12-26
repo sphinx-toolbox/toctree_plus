@@ -63,11 +63,11 @@ TOCTREE_PLUS_DEBUG = os.environ.get("TOCTREE_PLUS_DEBUG", 0)
 
 class TocTreePlusCollector(TocTreeCollector):
 	"""
-	Subclass of :class:`sphinx.environment.collectors.toctree.TocTreePlusCollector`
+	Subclass of :class:`sphinx.environment.collectors.toctree.TocTreeCollector`
 	that includes classes and functions in the toctree as if they were sections.
 
 	.. TODO:: Nested functions, classes and methods
-	"""
+	"""  # noqa: D400
 
 	def process_doc(self, app: Sphinx, doctree: nodes.document) -> None:
 		"""
@@ -105,11 +105,10 @@ class TocTreePlusCollector(TocTreeCollector):
 
 		def build_toc(node: nodes.Element, depth: int = 1) -> Optional[nodes.bullet_list]:
 			"""
+			Build the table of contents.
 
 			:param node:
 			:param depth:
-
-			:return:
 			"""
 
 			entries: List[nodes.Element] = []
