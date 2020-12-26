@@ -167,6 +167,6 @@ Configuration
 
 View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
 
-`Browse the GitHub Repository <https://github.com/domdfcoding/toctree_plus>`__
+`Browse the GitHub Repository <https://github.com/sphinx-toolbox/toctree_plus>`__
 
 .. end links

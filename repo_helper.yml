@@ -5,7 +5,9 @@ copyright_years: "2020"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
 version: "0.0.4"
-username: "domdfcoding"
+username: "sphinx-toolbox"
+assignee: "domdfcoding"
+primary_conda_channel: 'domdfcoding'
 license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
 
@@ -14,7 +16,6 @@ exclude_files:
  - rtfd
 
 conda_channels:
- - domdfcoding
  - conda-forge
 
 python_deploy_version: 3.6
@@ -26,7 +27,6 @@ additional_ignore:
  - ".*.swp"
  - ".*sw?"
 
-
 # Versions to run tests for
 python_versions:
  - '3.6'
@@ -35,13 +35,10 @@ python_versions:
  - '3.9'
  - '3.10-dev'
 
-# travis secure password for PyPI
-
 classifiers:
  - 'Development Status :: 4 - Beta'
  - "Framework :: Sphinx :: Extension"
  - 'Intended Audience :: Developers'
- - 'Operating System :: OS Independent'
  - 'Programming Language :: Python'
  - "Topic :: Documentation"
  - 'Topic :: Documentation :: Sphinx'
@@ -54,8 +51,14 @@ extra_sphinx_extensions:
 
 keywords:
  - sphinx
+ - documentation
  - sphinx-extension
 
 sphinx_conf_preamble:
  - html_logo = "../toctree_plus.png"
  - latex_logo = "../toctree_plus.png"
+
+third_party_version_matrix:
+  sphinx:
+    - 3.2
+    - 3.3

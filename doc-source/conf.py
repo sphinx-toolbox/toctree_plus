@@ -16,7 +16,7 @@ from __pkginfo__ import __version__
 html_logo = "../toctree_plus.png"
 latex_logo = "../toctree_plus.png"
 
-github_username = "domdfcoding"
+github_username = "sphinx-toolbox"
 github_repository = "toctree_plus"
 github_url = f"https://github.com/{github_username}/{github_repository}"
 
@@ -75,7 +75,7 @@ html_show_sourcelink = True  # True will show link to source
 
 html_context = {
 		"display_github": True,
-		"github_user": "domdfcoding",
+		"github_user": "sphinx-toolbox",
 		"github_repo": "toctree_plus",
 		"github_version": "master",
 		"conf_py_path": "/doc-source/",
