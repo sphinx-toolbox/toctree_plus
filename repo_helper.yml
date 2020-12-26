@@ -43,8 +43,6 @@ classifiers:
  - "Topic :: Documentation"
  - 'Topic :: Documentation :: Sphinx'
  - 'Topic :: Software Development :: Documentation'
- - 'Topic :: Software Development :: Libraries :: Python Modules'
- - "Topic :: Utilities"
 
 extra_sphinx_extensions:
  - "sphinx.ext.autosummary"
