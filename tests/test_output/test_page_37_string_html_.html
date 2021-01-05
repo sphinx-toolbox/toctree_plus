@@ -14,8 +14,6 @@
   </script>
   <script src="_static/doctools.js">
   </script>
-  <script src="_static/language_data.js">
-  </script>
   <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
  </head>
  <body>
@@ -1052,22 +1050,6 @@ literal text, it can be escaped by doubling:
          .
         </p>
         <p>
-         The grammar for a replacement field is as follows:
-        </p>
-        <blockquote>
-         <div>
-          <pre><strong id="grammar-token-sf-replacement_field"><span id="grammar-token-replacement-field"></span>replacement_field</strong> ::=  "{" [<a class="reference internal" href="#grammar-token-sf-field_name"><code class="xref docutils literal notranslate"><span class="pre">field_name</span></code></a>] ["!" <a class="reference internal" href="#grammar-token-sf-conversion"><code class="xref docutils literal notranslate"><span class="pre">conversion</span></code></a>] [":" <a class="reference internal" href="#grammar-token-sf-format_spec"><code class="xref docutils literal notranslate"><span class="pre">format_spec</span></code></a>] "}"
-<strong id="grammar-token-sf-field_name"><span id="grammar-token-field-name"></span>field_name       </strong> ::=  arg_name ("." <a class="reference internal" href="#grammar-token-sf-attribute_name"><code class="xref docutils literal notranslate"><span class="pre">attribute_name</span></code></a> | "[" <a class="reference internal" href="#grammar-token-sf-element_index"><code class="xref docutils literal notranslate"><span class="pre">element_index</span></code></a> "]")*
-<strong id="grammar-token-sf-arg_name"><span id="grammar-token-arg-name"></span>arg_name         </strong> ::=  [<code class="xref docutils literal notranslate"><span class="pre">identifier</span></code> | <code class="xref docutils literal notranslate"><span class="pre">digit</span></code>+]
-<strong id="grammar-token-sf-attribute_name"><span id="grammar-token-attribute-name"></span>attribute_name   </strong> ::=  <code class="xref docutils literal notranslate"><span class="pre">identifier</span></code>
-<strong id="grammar-token-sf-element_index"><span id="grammar-token-element-index"></span>element_index    </strong> ::=  <code class="xref docutils literal notranslate"><span class="pre">digit</span></code>+ | <a class="reference internal" href="#grammar-token-sf-index_string"><code class="xref docutils literal notranslate"><span class="pre">index_string</span></code></a>
-<strong id="grammar-token-sf-index_string"><span id="grammar-token-index-string"></span>index_string     </strong> ::=  &lt;any source character except "]"&gt; +
-<strong id="grammar-token-sf-conversion"><span id="grammar-token-conversion"></span>conversion       </strong> ::=  "r" | "s" | "a"
-<strong id="grammar-token-sf-format_spec"><span id="grammar-token-format-spec"></span>format_spec      </strong> ::=  &lt;described in the next section&gt;
-</pre>
-         </div>
-        </blockquote>
-        <p>
          In less formal terms, the replacement field can start with a
          <em>
           field_name
@@ -1408,22 +1390,6 @@ the same result as if you had called
           on the value. A
 non-empty format specification typically modifies the result.
          </p>
-         <p>
-          The general form of a
-          <em>
-           standard format specifier
-          </em>
-          is:
-         </p>
-         <pre><strong id="grammar-token-format_spec">format_spec    </strong> ::=  [[<a class="reference internal" href="#grammar-token-fill"><code class="xref docutils literal notranslate"><span class="pre">fill</span></code></a>]<a class="reference internal" href="#grammar-token-align"><code class="xref docutils literal notranslate"><span class="pre">align</span></code></a>][<a class="reference internal" href="#grammar-token-sign"><code class="xref docutils literal notranslate"><span class="pre">sign</span></code></a>][#][0][<a class="reference internal" href="#grammar-token-width"><code class="xref docutils literal notranslate"><span class="pre">width</span></code></a>][<a class="reference internal" href="#grammar-token-grouping_option"><code class="xref docutils literal notranslate"><span class="pre">grouping_option</span></code></a>][.<a class="reference internal" href="#grammar-token-precision"><code class="xref docutils literal notranslate"><span class="pre">precision</span></code></a>][<a class="reference internal" href="#grammar-token-type"><code class="xref docutils literal notranslate"><span class="pre">type</span></code></a>]
-<strong id="grammar-token-fill">fill           </strong> ::=  &lt;any character&gt;
-<strong id="grammar-token-align">align          </strong> ::=  "&lt;" | "&gt;" | "=" | "^"
-<strong id="grammar-token-sign">sign           </strong> ::=  "+" | "-" | " "
-<strong id="grammar-token-width">width          </strong> ::=  <code class="xref docutils literal notranslate"><span class="pre">digit</span></code>+
-<strong id="grammar-token-grouping_option"><span id="grammar-token-grouping-option"></span>grouping_option</strong> ::=  "_" | ","
-<strong id="grammar-token-precision">precision      </strong> ::=  <code class="xref docutils literal notranslate"><span class="pre">digit</span></code>+
-<strong id="grammar-token-type">type           </strong> ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o" | "s" | "x" | "X" | "%"
-</pre>
          <p>
           If a valid
           <em>

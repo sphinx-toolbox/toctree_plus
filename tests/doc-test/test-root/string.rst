@@ -194,18 +194,6 @@ Anything that is not contained in braces is considered literal text, which is
 copied unchanged to the output.  If you need to include a brace character in the
 literal text, it can be escaped by doubling: ``{{`` and ``}}``.
 
-The grammar for a replacement field is as follows:
-
-   .. productionlist:: sf
-      replacement_field: "{" [`field_name`] ["!" `conversion`] [":" `format_spec`] "}"
-      field_name: arg_name ("." `attribute_name` | "[" `element_index` "]")*
-      arg_name: [`identifier` | `digit`+]
-      attribute_name: `identifier`
-      element_index: `digit`+ | `index_string`
-      index_string: <any source character except "]"> +
-      conversion: "r" | "s" | "a"
-      format_spec: <described in the next section>
-
 In less formal terms, the replacement field can start with a *field_name* that specifies
 the object whose value is to be formatted and inserted
 into the output instead of the replacement field.
@@ -296,18 +284,6 @@ although some of the formatting options are only supported by the numeric types.
 A general convention is that an empty format specification produces
 the same result as if you had called :func:`str` on the value. A
 non-empty format specification typically modifies the result.
-
-The general form of a *standard format specifier* is:
-
-.. productionlist::
-   format_spec: [[`fill`]`align`][`sign`][#][0][`width`][`grouping_option`][.`precision`][`type`]
-   fill: <any character>
-   align: "<" | ">" | "=" | "^"
-   sign: "+" | "-" | " "
-   width: `digit`+
-   grouping_option: "_" | ","
-   precision: `digit`+
-   type: "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" | "o" | "s" | "x" | "X" | "%"
 
 If a valid *align* value is specified, it can be preceded by a *fill*
 character that can be any character and defaults to a space if omitted.

@@ -29,7 +29,7 @@ author = "Dominic Davis-Foster"
 project = "toctree_plus"
 slug = re.sub(r'\W+', '-', project.lower())
 release = version = __version__
-copyright = "2020 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
+copyright = "2020-2021 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
 language = "en"
 package_root = "sphinxcontrib/toctree_plus"
 
