@@ -5,7 +5,11 @@
 Enhanced Sphinx TocTree that shows classes and functions as if they were sections.
 """
 #
-#  Copyright © {{ copyright_years }} {{ author }} <{{ email }}>
+#  Copyright © 2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#
+#  Based on Sphinx
+#  Copyright (c) 2007-2020 by the Sphinx team.
+#  BSD Licensed
 #
 #  Redistribution and use in source and binary forms, with or without modification,
 #  are permitted provided that the following conditions are met:
@@ -50,8 +54,6 @@ __version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
 
 __all__ = ["TocTreePlusCollector", "setup"]
-
-# For type hinting install docutils-stubs
 
 N = TypeVar('N')
 
@@ -161,6 +163,7 @@ class TocTreePlusCollector(TocTreeCollector):
 					# (doesn't currently work for method directives - are they nested?)
 
 					if sectionnode.attributes["objtype"] in set(app.env.config.toctree_plus_types):
+
 						attributes = sectionnode.children[0].attributes
 						if not attributes["ids"]:
 							# Has no anchor
