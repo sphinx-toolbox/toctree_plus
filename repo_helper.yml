@@ -11,9 +11,7 @@ primary_conda_channel: 'domdfcoding'
 license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
 
-exclude_files:
- - bumpversion
- - rtfd
+use_whey: True
 
 conda_channels:
  - conda-forge
