@@ -9,7 +9,6 @@ Enhanced Sphinx TocTree that shows classes and functions as if they were section
 #
 #  Based on Sphinx
 #  Copyright (c) 2007-2020 by the Sphinx team.
-#  BSD Licensed
 #
 #  Redistribution and use in source and binary forms, with or without modification,
 #  are permitted provided that the following conditions are met:
