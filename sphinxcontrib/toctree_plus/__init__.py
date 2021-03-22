@@ -35,7 +35,7 @@ Enhanced Sphinx TocTree that shows classes and functions as if they were section
 # stdlib
 import os
 from pprint import pprint
-from typing import Any, Dict, List, Optional, Set, Type, TypeVar
+from typing import Any, Dict, Iterable, List, Optional, Type, TypeVar
 
 # 3rd party
 from docutils import nodes
@@ -47,7 +47,7 @@ from sphinx.transforms import SphinxContentsFilter
 from sphinx.util import logging
 
 __author__: str = "Dominic Davis-Foster"
-__copyright__: str = "2020 Dominic Davis-Foster"
+__copyright__: str = "2020-2021 Dominic Davis-Foster"
 __license__: str = "BSD"
 __version__: str = "0.1.1"
 __email__: str = "dominic@davis-foster.co.uk"
@@ -114,6 +114,7 @@ class TocTreePlusCollector(TocTreeCollector):
 
 			entries: List[nodes.Element] = []
 			item: nodes.Element
+			toctree_plus_types = set(app.env.config.toctree_plus_types)
 
 			for sectionnode in node:
 				# find all toctree nodes in this section and add them
@@ -133,7 +134,7 @@ class TocTreePlusCollector(TocTreeCollector):
 						# as it is the file's title anyway
 						anchorname = ''
 					else:
-						anchorname = '#' + sectionnode["ids"][0]
+						anchorname = f'#{sectionnode["ids"][0]}'
 
 					numentries[0] += 1
 
@@ -161,7 +162,7 @@ class TocTreePlusCollector(TocTreeCollector):
 					# Add class, function and method directives to toctree.
 					# (doesn't currently work for method directives - are they nested?)
 
-					if sectionnode.attributes["objtype"] in set(app.env.config.toctree_plus_types):
+					if sectionnode.attributes["objtype"] in toctree_plus_types:
 
 						attributes = sectionnode.children[0].attributes
 						if not attributes["ids"]:
@@ -169,7 +170,7 @@ class TocTreePlusCollector(TocTreeCollector):
 							continue
 
 						title = attributes.get("fullname", sectionnode.children[0].astext())
-						anchorname = '#' + attributes["ids"][0]
+						anchorname = f'#{attributes["ids"][0]}'
 
 						reference = nodes.reference(
 								'',
@@ -225,7 +226,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	"""
 
 	# Set of types to add to toctree
-	app.add_config_value("toctree_plus_types", {"class", "function", "method"}, "env", [Set[str]])
+	app.add_config_value("toctree_plus_types", {"class", "function", "method"}, "env", [Iterable[str]])
 	app.add_env_collector(TocTreePlusCollector)
 
 	return {

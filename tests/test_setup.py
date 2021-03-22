@@ -1,5 +1,5 @@
 # stdlib
-from typing import Set
+from typing import Iterable
 
 # 3rd party
 from sphinx_toolbox.testing import Sphinx, run_setup
@@ -20,4 +20,4 @@ def test_setup():
 			"parallel_write_safe": True,
 			}
 
-	assert app.config.values["toctree_plus_types"] == ({"class", "function", "method"}, "env", [Set[str]])
+	assert app.config.values["toctree_plus_types"] == ({"class", "function", "method"}, "env", [Iterable[str]])
