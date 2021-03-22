@@ -85,6 +85,3 @@ profile_default/
 ipython_config.py
 Pipfile.lock
 .pyre/
-*~
-.*.swp
-.*sw?

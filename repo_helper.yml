@@ -12,18 +12,10 @@ license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
 
 use_whey: True
+python_deploy_version: 3.6
 
 conda_channels:
  - conda-forge
-
-python_deploy_version: 3.6
-
-# Additional lines for .gitignore
-additional_ignore:
-#  Editors
- - "*~"
- - ".*.swp"
- - ".*sw?"
 
 # Versions to run tests for
 python_versions:
