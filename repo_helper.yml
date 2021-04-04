@@ -47,6 +47,6 @@ sphinx_conf_preamble:
  - latex_logo = "../toctree_plus.png"
 
 third_party_version_matrix:
-  sphinx:
-    - 3.2
-    - 3.3
+  docutils:
+    - 0.16
+    - 0.17
