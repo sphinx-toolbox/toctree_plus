@@ -9,9 +9,11 @@ description = "Enhanced Sphinx TocTree that shows classes and functions as if th
 readme = "README.rst"
 keywords = [ "sphinx", "documentation", "sphinx-extension",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
+
 [[project.authors]]
 email = "dominic@davis-foster.co.uk"
 name = "Dominic Davis-Foster"
+
 
 [project.license]
 file = "LICENSE"
@@ -38,3 +40,7 @@ python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "BSD-3-Clause"
 package = "sphinxcontrib"
+
+[tool.mkrecipe]
+conda-channels = [ "conda-forge", "domdfcoding",]
+extras = "all"
