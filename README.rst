@@ -117,6 +117,17 @@
 
 .. end shields
 
+This idea has been suggested in `sphinx-doc/sphinx#6316`_ and `sphinx-doc/sphinx#6435`_
+
+You can see ``toctree-plus`` in action in `this project's documentation`_,
+and the documentation for domdf-python-tools_ (ReadTheDocs Sphinx Theme) and whey_ (Furo Sphinx Theme).
+
+.. _sphinx-doc/sphinx#6316: https://github.com/sphinx-doc/sphinx/issues/6316
+.. _sphinx-doc/sphinx#6435: https://github.com/sphinx-doc/sphinx/issues/6435
+.. _this project's documentation: https://toctree-plus.readthedocs.io/en/latest/docs.html
+.. _domdf-python-tools: https://domdf-python-tools.readthedocs.io/en/latest/api/iterative.html
+.. _whey: https://whey.readthedocs.io/en/latest/api/config.html
+
 Installation
 --------------
 
