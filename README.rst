@@ -178,5 +178,5 @@ This determines the directive types that appear in the toctree. The default valu
 Links
 -----
 
-- Source: https://github.com/domdfcoding/toctree_plus
-- Bugs: https://github.com/domdfcoding/toctree_plus/issues
+- Source: https://github.com/sphinx-toolbox/toctree_plus
+- Bugs: https://github.com/sphinx-toolbox/toctree_plus/issues
