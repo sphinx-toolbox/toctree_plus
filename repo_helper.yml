@@ -29,7 +29,6 @@ classifiers:
  - 'Development Status :: 4 - Beta'
  - "Framework :: Sphinx :: Extension"
  - 'Intended Audience :: Developers'
- - 'Programming Language :: Python'
  - "Topic :: Documentation"
  - 'Topic :: Documentation :: Sphinx'
  - 'Topic :: Software Development :: Documentation'
