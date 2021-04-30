@@ -3,6 +3,7 @@
 
 # stdlib
 import sys
+from typing import Tuple
 
 # 3rd party
 import pytest
@@ -24,15 +25,20 @@ def test(app):
 
 # pytestmark = pytest.mark.sphinx('html', testroot='root')
 
-docutils_version = importlib_metadata.version("docutils")
+docutils_version = tuple(map(int, importlib_metadata.version("docutils").split('.')))[:2]
 
 
-def _param(version: str):
+def _param(version: Tuple[int, int]):
+
 	return pytest.param(
 			version,
 			marks=pytest.mark.skipif(
-					docutils_version != version, reason="Difference in output between docutils versions"
-					)
+					docutils_version != version,
+					reason="Difference in output between docutils versions (current version {}.{})".format(
+							*docutils_version
+							),
+					),
+			id="{}.{}".format(*version)
 			)
 
 
@@ -51,7 +57,7 @@ gte_38 = pytest.mark.skipif(
 		pytest.param("37", marks=gte_38),
 		pytest.param("38", marks=lt_38),
 		])
-@pytest.mark.parametrize("docutils_version", [_param("0.16"), _param("0.17")])
+@pytest.mark.parametrize("docutils_version", [_param((0, 16)), _param((0, 17))])
 @pytest.mark.parametrize("page", ["index.html", "string.html", "csv.html"], indirect=True)
 def test_page(py_version: str, docutils_version: str, page: BeautifulSoup, file_regression: FileRegressionFixture):
 	check_html_regression(page, file_regression)
