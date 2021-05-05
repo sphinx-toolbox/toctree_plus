@@ -9,10 +9,11 @@ username: "sphinx-toolbox"
 assignee: "domdfcoding"
 primary_conda_channel: 'domdfcoding'
 license: 'BSD'
-short_desc: 'Enhanced Sphinx TocTree that shows classes and functions as if they were sections.'
+short_desc: 'Enhanced Sphinx TocTree which shows classes and functions as if they were sections.'
 
 use_whey: True
 python_deploy_version: 3.6
+preserve_custom_theme: true
 
 conda_channels:
  - conda-forge
@@ -37,6 +38,7 @@ classifiers:
 
 extra_sphinx_extensions:
  - "sphinx.ext.autosummary"
+ - html_section
 
 keywords:
  - sphinx
@@ -51,3 +53,6 @@ sphinx_conf_preamble:
 #  docutils:
 #    - 0.16
 #    - 0.17
+
+exclude_files:
+ - contributing

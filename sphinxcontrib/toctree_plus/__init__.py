@@ -2,7 +2,7 @@
 #
 #  __init__.py
 """
-Enhanced Sphinx TocTree that shows classes and functions as if they were sections.
+Enhanced Sphinx TocTree which shows classes and functions as if they were sections.
 """
 #
 #  Copyright © 2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>

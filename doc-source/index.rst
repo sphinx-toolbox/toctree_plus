@@ -131,30 +131,11 @@ and the documentation for domdf-python-tools_ (ReadTheDocs Sphinx Theme) and whe
 .. _domdf-python-tools: https://domdf-python-tools.readthedocs.io/en/latest/api/iterative.html
 .. _whey: https://whey.readthedocs.io/en/latest/api/config.html
 
-Installation
---------------
 
-.. start installation
+Contents
+-----------
 
-.. installation:: toctree_plus
-	:pypi:
-	:github:
-	:anaconda:
-	:conda-channels: conda-forge, domdfcoding
-
-.. end installation
-
-.. extensions:: toctree_plus
-	:import-name: sphinxcontrib.toctree_plus
-
-Configuration
---------------
-
-.. confval:: toctree_plus_types
-	:type: :class:`~typing.Dict`\[:class:`str`\]
-	:default: ``{"class", "function", "method"}``
-
-	This determines the directive types that appear in the toctree.
+.. html-section::
 
 
 .. toctree::
@@ -165,17 +146,21 @@ Configuration
 
 .. toctree::
 	:maxdepth: 3
-	:caption: Documentation
 
+	usage
 	Demo<demo>
-	API Reference<docs>
+	api
+	Source
+
 
 .. toctree::
-	:maxdepth: 3
-	:caption: Contributing
+        :caption: Links
+        :hidden:
 
-	contributing
-	Source
+        GitHub <https://github.com/sphinx-toolbox/toctree_plus>
+        PyPI <https://pypi.org/project/toctree_plus>
+        Contributing Guide <https://contributing-to-sphinx-toolbox.readthedocs.io/en/latest/>
+
 
 .. start links
 

@@ -5,7 +5,7 @@ build-backend = "whey"
 [project]
 name = "toctree_plus"
 version = "0.2.2"
-description = "Enhanced Sphinx TocTree that shows classes and functions as if they were sections."
+description = "Enhanced Sphinx TocTree which shows classes and functions as if they were sections."
 readme = "README.rst"
 keywords = [ "documentation", "sphinx", "sphinx-extension",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
@@ -72,6 +72,7 @@ extensions = [
     "sphinx_debuginfo",
     "seed_intersphinx_mapping",
     "sphinx.ext.autosummary",
+    "html_section",
 ]
 sphinxemoji_style = "twemoji"
 gitstamp_fmt = "%d %b %Y"
