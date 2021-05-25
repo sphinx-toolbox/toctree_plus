@@ -63,5 +63,12 @@ autodoc_default_options = {
 		}
 
 latex_elements = {
-		"fncychap": "\\usepackage[Bjarne]{fncychap}\n\\ChNameAsIs\n\\ChTitleAsIs\n",
+		"printindex": "\\begin{flushleft}\n\\printindex\n\\end{flushleft}",
 		}
+
+
+def setup(app):
+	# 3rd party
+	from sphinx_toolbox.latex import better_header_layout
+
+	app.connect("config-inited", lambda app, config: better_header_layout(config))
