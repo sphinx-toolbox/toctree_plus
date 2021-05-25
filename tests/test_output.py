@@ -71,8 +71,16 @@ def test_page(
 	check_html_regression(page, advanced_file_regression)
 
 
+@pytest.mark.parametrize("py_version", [
+		pytest.param("37", marks=gte_38),
+		pytest.param("38", marks=lt_38),
+		])
 @pytest.mark.sphinx("latex", srcdir="test-root")
-def test_latex_output(app, advanced_file_regression: AdvancedFileRegressionFixture):
+def test_latex_output(
+		app,
+		py_version: str,
+		advanced_file_regression: AdvancedFileRegressionFixture,
+		):
 
 	assert app.builder.name.lower() == "latex"
 
