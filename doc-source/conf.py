@@ -64,6 +64,7 @@ autodoc_default_options = {
 
 latex_elements = {
 		"printindex": "\\begin{flushleft}\n\\printindex\n\\end{flushleft}",
+		"tableofcontents": "\\pdfbookmark[0]{\\contentsname}{toc}\\sphinxtableofcontents",
 		}
 
 
