@@ -44,7 +44,8 @@ from sphinx.application import Sphinx
 from sphinx.environment.adapters.toctree import TocTree
 from sphinx.environment.collectors.toctree import TocTreeCollector
 from sphinx.transforms import SphinxContentsFilter
-from sphinx.util import logging
+from sphinx.util import logging, texescape
+from sphinx.writers.latex import LaTeXTranslator
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020-2021 Dominic Davis-Foster"
@@ -74,7 +75,7 @@ class TocTreePlusCollector(TocTreeCollector):
 		"""
 		Build a TOC from the doctree and store it in the inventory.
 
-		:param app:
+		:param app: The Sphinx application.
 		:param doctree:
 		"""
 
@@ -218,16 +219,64 @@ class TocTreePlusCollector(TocTreeCollector):
 		app.env.toc_num_entries[docname] = numentries[0]
 
 
+def visit_desc(translator: LaTeXTranslator, node: addnodes.desc) -> None:
+	"""
+	Visit an :class:`addnodes.desc` node and add a custom table of contents label for the item, if required.
+
+	.. versionadded:: 0.3.0
+
+	:param translator:
+	:param node:
+	"""
+
+	translator.body.append("\n\n\\begin{fulllineitems}\n")
+
+	# Add class, function and method directives to toctree.
+	if node.attributes["objtype"] in set(translator.config.toctree_plus_types):
+
+		attributes = node.children[0].attributes
+		if attributes["ids"]:
+			# Only want nodes with an anchor
+
+			title = texescape.escape(attributes.get("fullname", node.children[0].astext()))
+			sectiontype = translator.sectionnames[translator.sectionlevel + 1]
+
+			translator.body.append(f"\\phantomsection\\stepcounter{{{sectiontype}}}\n")
+			translator.body.append(
+					"\\addcontentsline{toc}{%s}{\\protect\\numberline{\\the%s}{%s}}\n" %
+					(sectiontype, sectiontype, title)
+					)
+
+	if translator.table:
+		translator.table.has_problematic = True
+
+
+def depart_desc(translator: LaTeXTranslator, node: addnodes.desc) -> None:
+	"""
+	Visit an :class:`addnodes.desc` node.
+
+	.. versionadded:: 0.3.0
+
+	:param translator:
+	:param node:
+	"""
+
+	translator.body.append("\n\\end{fulllineitems}\n\n")
+
+
 def setup(app: Sphinx) -> Dict[str, Any]:
 	"""
 	Setup Sphinx Extension.
 
-	:param app:
+	:param app: The Sphinx application.
 	"""
 
 	# Set of types to add to toctree
 	app.add_config_value("toctree_plus_types", {"class", "function", "method"}, "env", [Iterable[str]])
 	app.add_env_collector(TocTreePlusCollector)
+
+	# Adds table of contents labels for LaTeX builder.
+	app.add_node(addnodes.desc, latex=(visit_desc, depart_desc), override=True)
 
 	return {
 			"version": __version__,

@@ -7,3 +7,5 @@ TocTree Plus Demo
 	:glob:
 
 	*
+
+.. class:: name_with_underscores

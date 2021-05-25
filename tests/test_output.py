@@ -2,14 +2,17 @@
 # and https://github.com/sphinx-doc/sphinx/issues/7008
 
 # stdlib
+import re
 import sys
 from typing import Tuple
 
 # 3rd party
 import pytest
 from bs4 import BeautifulSoup  # type: ignore
+from coincidence.regressions import AdvancedFileRegressionFixture
 from domdf_python_tools.compat import importlib_metadata
-from pytest_regressions.file_regression import FileRegressionFixture  # type: ignore
+from domdf_python_tools.paths import PathPlus
+from domdf_python_tools.stringlist import StringList
 from sphinx_toolbox.testing import check_html_regression
 
 
@@ -59,5 +62,25 @@ gte_38 = pytest.mark.skipif(
 		])
 @pytest.mark.parametrize("docutils_version", [_param((0, 16)), _param((0, 17))])
 @pytest.mark.parametrize("page", ["index.html", "string.html", "csv.html"], indirect=True)
-def test_page(py_version: str, docutils_version: str, page: BeautifulSoup, file_regression: FileRegressionFixture):
-	check_html_regression(page, file_regression)
+def test_page(
+		py_version: str,
+		docutils_version: str,
+		page: BeautifulSoup,
+		advanced_file_regression: AdvancedFileRegressionFixture,
+		):
+	check_html_regression(page, advanced_file_regression)
+
+
+@pytest.mark.sphinx("latex", srcdir="test-root")
+def test_latex_output(app, advanced_file_regression: AdvancedFileRegressionFixture):
+
+	assert app.builder.name.lower() == "latex"
+
+	app.build()
+
+	output_file = PathPlus(app.outdir / "python.tex")
+	content = StringList(output_file.read_lines())
+	advanced_file_regression.check(
+			re.sub(r"\\date{.*}", r"\\date{Mar 11, 2021}", str(content)),
+			extension=".tex",
+			)
