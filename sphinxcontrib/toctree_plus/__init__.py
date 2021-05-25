@@ -229,7 +229,7 @@ def visit_desc(translator: LaTeXTranslator, node: addnodes.desc) -> None:
 	:param node:
 	"""
 
-	translator.body.append("\n\n\\begin{fulllineitems}\n")
+	translator.body.append("\n\n\\vspace{5px}\n\n\\begin{fulllineitems}\n")
 
 	# Add class, function and method directives to toctree.
 	if node.attributes["objtype"] in set(translator.config.toctree_plus_types):
