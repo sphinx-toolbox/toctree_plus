@@ -2,13 +2,17 @@
 .. toctree:: + Demo
 ====================
 
+.. only:: latex
+
+	.. include:: _blurb.rst
+
 .. note::
 
 	This documentation was generated with the following setting in ``conf.py``:
 
 	.. code-block:: python
 
-		toctree_plus_types = {"class", "function", "method", "data"}
+		toctree_plus_types = {"class", "function", "data"}
 
 .. attention::
 

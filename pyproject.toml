@@ -73,7 +73,8 @@ extensions = [
     "sphinx_debuginfo",
     "seed_intersphinx_mapping",
     "sphinx.ext.autosummary",
-    "html_section",
+    "sphinx_toolbox_experimental.html_section",
+    "sphinx_toolbox_experimental.autosummary_widths",
 ]
 sphinxemoji_style = "twemoji"
 gitstamp_fmt = "%d %b %Y"

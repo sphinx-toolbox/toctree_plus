@@ -38,7 +38,8 @@ classifiers:
 
 extra_sphinx_extensions:
  - "sphinx.ext.autosummary"
- - html_section
+ - sphinx_toolbox_experimental.html_section
+ - sphinx_toolbox_experimental.autosummary_widths
 
 keywords:
  - sphinx
