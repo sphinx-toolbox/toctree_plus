@@ -82,7 +82,7 @@ class TocTreePlusCollector(TocTreeCollector):
 		docname = app.env.docname
 		numentries = [0]  # nonlocal again...
 
-		def traverse_in_section(node: nodes.Element, cls: "Type[N]") -> List[N]:
+		def traverse_in_section(node: nodes.Element, cls: Type[N]) -> List[N]:
 			"""
 			Like traverse(), but stay within the same section.
 
@@ -171,6 +171,11 @@ class TocTreePlusCollector(TocTreeCollector):
 							continue
 
 						title = attributes.get("fullname", sectionnode.children[0].astext())
+
+						if sectionnode.attributes["objtype"] in {"method", "attribute"}:
+							# TODO: remove special case
+							title = title.split('.', 1)[-1]
+
 						anchorname = f'#{attributes["ids"][0]}'
 
 						reference = nodes.reference(
@@ -184,7 +189,13 @@ class TocTreePlusCollector(TocTreeCollector):
 						para = addnodes.compact_paragraph('', '', reference)
 						item = nodes.list_item('', para)
 
+						sub_item = build_toc(sectionnode.children[1], depth + 1)
+
+						if sub_item:
+							item += sub_item
+
 						entries.append(item)
+
 					elif TOCTREE_PLUS_DEBUG:
 						print(sectionnode)
 						pprint(sectionnode.attributes["objtype"])
@@ -197,6 +208,7 @@ class TocTreePlusCollector(TocTreeCollector):
 						entries.append(onlynode)
 
 				elif isinstance(sectionnode, nodes.Element):
+
 					for toctreenode in traverse_in_section(sectionnode, addnodes.toctree):
 						item = toctreenode.copy()
 						entries.append(item)
@@ -239,7 +251,14 @@ def visit_desc(translator: LaTeXTranslator, node: addnodes.desc) -> None:
 			# Only want nodes with an anchor
 
 			title = texescape.escape(attributes.get("fullname", node.children[0].astext()))
-			sectiontype = translator.sectionnames[translator.sectionlevel + 1]
+			sectionlevel = translator.sectionlevel + 1
+
+			if node.attributes["objtype"] in {"method", "attribute"}:
+				# TODO: remove special case
+				title = title.split('.', 1)[-1]
+				sectionlevel += 1
+
+			sectiontype = translator.sectionnames[sectionlevel]
 
 			translator.body.append(f"\\phantomsection\\stepcounter{{{sectiontype}}}\n")
 			translator.body.append(
