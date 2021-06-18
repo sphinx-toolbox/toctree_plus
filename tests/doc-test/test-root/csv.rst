@@ -34,11 +34,6 @@ The :mod:`csv` module's :class:`reader` and :class:`writer` objects read and
 write sequences.  Programmers can also read and write data in dictionary form
 using the :class:`DictReader` and :class:`DictWriter` classes.
 
-.. seealso::
-
-   :pep:`305` - CSV File API
-      The Python Enhancement Proposal which proposed this addition to Python.
-
 
 .. _csv-contents:
 
