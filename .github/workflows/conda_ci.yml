@@ -48,7 +48,7 @@ jobs:
 
       - name: "Install package"
         run: |
-          $CONDA/bin/conda install -c file://$(pwd)/conda-bld toctree_plus=0.4.0=py_1 -y || exit 1
+          $CONDA/bin/conda install -c file://$(pwd)/conda-bld toctree_plus=0.5.0b1=py_1 -y || exit 1
 
       - name: "Run Tests"
         run: |
