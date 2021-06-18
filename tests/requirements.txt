@@ -12,4 +12,4 @@ pytest-randomly>=3.7.0
 pytest-regressions>=2.0.1
 pytest-rerunfailures>=9.0
 pytest-timeout>=1.4.2
-sphinx-toolbox[testing]>=0.3.0
+sphinx-toolbox[testing]>=2.13.0b1
