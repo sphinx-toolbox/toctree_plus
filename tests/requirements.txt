@@ -8,4 +8,4 @@ pytest-cov>=2.8.1
 pytest-randomly>=3.7.0
 pytest-regressions>=2.0.1
 pytest-timeout>=1.4.2
-sphinx-toolbox[testing]>=2.13.0b1
+sphinx-toolbox[testing]>=2.13.0b3

@@ -87,8 +87,14 @@ def test_latex_output(
 	app.build()
 
 	output_file = PathPlus(app.outdir / "python.tex")
-	content = StringList(output_file.read_lines())
+	content = str(StringList(output_file.read_lines())).replace("\\sphinxAtStartPar\n", '').replace(". %\n", ".\n")
+	content = re.sub(
+			r"\\sphinxstepexplicit %\n(\\begin{footnote}\[1])\\phantomsection\\label{\\thesphinxscope\.1}%\n\\sphinxAtStartFootnote",
+			"\n\\1\\\\sphinxAtStartFootnote",
+			content,
+			)
+
 	advanced_file_regression.check(
-			re.sub(r"\\date{.*}", r"\\date{Mar 11, 2021}", str(content)),
+			re.sub(r"\\date{.*}", r"\\date{Mar 11, 2021}", content),
 			extension=".tex",
 			)
