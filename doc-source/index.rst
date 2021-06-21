@@ -106,7 +106,7 @@
 		:alt: GitHub top language
 
 	.. |commits-since| github-shield::
-		:commits-since: v0.5.0b1
+		:commits-since: v0.5.0
 		:alt: GitHub commits since tagged version
 
 	.. |commits-latest| github-shield::

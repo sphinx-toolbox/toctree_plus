@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "toctree_plus"
-version = "0.5.0b1"
+version = "0.5.0"
 description = "Enhanced Sphinx TocTree which shows classes and functions as if they were sections."
 readme = "README.rst"
 keywords = [ "documentation", "sphinx", "sphinx-extension",]
