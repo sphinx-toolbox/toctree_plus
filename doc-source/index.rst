@@ -149,12 +149,13 @@ Contents
 
 
 .. toctree::
-        :caption: Links
-        :hidden:
+	:caption: Links
+	:hidden:
 
-        GitHub <https://github.com/sphinx-toolbox/toctree_plus>
-        PyPI <https://pypi.org/project/toctree_plus>
-        Contributing Guide <https://contributing-to-sphinx-toolbox.readthedocs.io/en/latest/>
+	GitHub <https://github.com/sphinx-toolbox/toctree_plus>
+	PyPI <https://pypi.org/project/toctree_plus>
+	Contributing Guide <https://contributing-to-sphinx-toolbox.readthedocs.io/en/latest/>
+	license
 
 
 .. start links
