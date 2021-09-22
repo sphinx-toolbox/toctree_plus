@@ -4,7 +4,7 @@
 
 .. start short_desc
 
-**Enhanced Sphinx TocTree which shows classes and functions as if they were sections.**
+**Enhanced Sphinx TocTree which shows classes, functions etc. as if they were sections.**
 
 .. end short_desc
 
