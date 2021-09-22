@@ -34,8 +34,16 @@ Enhanced Sphinx TocTree which shows classes and functions as if they were sectio
 
 # stdlib
 import os
+import sys
 from pprint import pprint
 from typing import Any, Dict, Iterable, List, Optional, Type, TypeVar
+
+if sys.version_info >= (3, 10):
+	# This needs to be before Sphinx is imported
+
+	# stdlib
+	import types
+	types.Union = types.UnionType
 
 # 3rd party
 from docutils import nodes
