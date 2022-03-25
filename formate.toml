@@ -42,6 +42,7 @@ known_third_party = [
     "github",
     "html5lib",
     "importlib_metadata",
+    "jinja2",
     "packaging",
     "pytest",
     "pytest_cov",
