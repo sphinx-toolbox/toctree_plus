@@ -125,7 +125,7 @@ class TocTreePlusCollector(TocTreeCollector):
 			item: nodes.Element
 			toctree_plus_types = set(app.env.config.toctree_plus_types)
 
-			for sectionnode in node:
+			for sectionnode in node:  # type: ignore[attr-defined]
 				# find all toctree nodes in this section and add them
 				# to the toc (just copying the toctree node which is then
 				# resolved in self.get_and_resolve_doctree)
@@ -173,7 +173,7 @@ class TocTreePlusCollector(TocTreeCollector):
 
 					if sectionnode.attributes["objtype"] in toctree_plus_types:
 
-						attributes = sectionnode.children[0].attributes
+						attributes = sectionnode.children[0].attributes  # type: ignore[attr-defined]
 						if not attributes["ids"]:
 							# Has no anchor
 							continue
@@ -197,7 +197,7 @@ class TocTreePlusCollector(TocTreeCollector):
 						para = addnodes.compact_paragraph('', '', reference)
 						item = nodes.list_item('', para)
 
-						sub_item = build_toc(sectionnode.children[1], depth + 1)
+						sub_item = build_toc(sectionnode.children[1], depth + 1)  # type: ignore[arg-type]
 
 						if sub_item:
 							item += sub_item
@@ -254,7 +254,7 @@ def visit_desc(translator: LaTeXTranslator, node: addnodes.desc) -> None:
 	# Add class, function and method directives to toctree.
 	if node.attributes["objtype"] in set(translator.config.toctree_plus_types):
 
-		attributes = node.children[0].attributes
+		attributes = node.children[0].attributes  # type: ignore[attr-defined]
 		if attributes["ids"]:
 			# Only want nodes with an anchor
 

@@ -15,6 +15,7 @@ use_whey: True
 python_deploy_version: 3.6
 preserve_custom_theme: true
 docs_fail_on_warning: true
+mypy_version: 0.942
 
 conda_channels:
  - conda-forge
