@@ -57,8 +57,8 @@
 	:target: https://github.com/sphinx-toolbox/toctree_plus/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/toctree_plus/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/toctree_plus/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/toctree_plus/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/toctree_plus/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/sphinx-toolbox/toctree_plus/master?logo=coveralls
