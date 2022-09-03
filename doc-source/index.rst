@@ -60,8 +60,8 @@
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/toctree_plus/badge.svg
-		:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/toctree_plus/
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/toctree_plus/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/toctree_plus/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::
