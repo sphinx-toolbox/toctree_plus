@@ -29,8 +29,8 @@
 	* - Other
 	  - |license| |language| |requires|
 
-.. |docs| image:: https://img.shields.io/readthedocs/toctree_plus/latest?logo=read-the-docs
-	:target: https://toctree_plus.readthedocs.io/en/latest
+.. |docs| image:: https://img.shields.io/readthedocs/toctree-plus/latest?logo=read-the-docs
+	:target: https://toctree-plus.readthedocs.io/en/latest
 	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/sphinx-toolbox/toctree_plus/workflows/Docs%20Check/badge.svg
@@ -108,7 +108,7 @@
 	:target: https://github.com/sphinx-toolbox/toctree_plus/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2023
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/toctree_plus
