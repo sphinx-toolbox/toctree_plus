@@ -22,7 +22,7 @@ file = "LICENSE"
 Homepage = "https://github.com/sphinx-toolbox/toctree_plus"
 "Issue Tracker" = "https://github.com/sphinx-toolbox/toctree_plus/issues"
 "Source Code" = "https://github.com/sphinx-toolbox/toctree_plus"
-Documentation = "https://toctree_plus.readthedocs.io/en/latest"
+Documentation = "https://toctree-plus.readthedocs.io/en/latest"
 
 [tool.whey]
 base-classifiers = [
