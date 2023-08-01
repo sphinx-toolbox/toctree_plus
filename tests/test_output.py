@@ -13,10 +13,11 @@ from coincidence.regressions import AdvancedFileRegressionFixture
 from domdf_python_tools.compat import importlib_metadata
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.stringlist import StringList
+from sphinx.application import Sphinx
 from sphinx_toolbox.testing import check_html_regression
 
 
-def test(app):
+def test(app: Sphinx) -> None:
 	# app is a Sphinx application object for default sphinx project (`tests/doc-test/test-root`).
 	app.build()
 
@@ -31,7 +32,7 @@ def test(app):
 docutils_version = tuple(map(int, importlib_metadata.version("docutils").split('.')))[:2]
 
 
-def _param(version: Tuple[int, int]):
+def _param(version: Tuple[int, int]):  # noqa: MAN002
 
 	return pytest.param(
 			version,
@@ -77,16 +78,18 @@ def test_page(
 		])
 @pytest.mark.sphinx("latex", srcdir="test-root")
 def test_latex_output(
-		app,
+		app: Sphinx,
 		py_version: str,
 		advanced_file_regression: AdvancedFileRegressionFixture,
 		):
+
+	assert app.builder is not None
 
 	assert app.builder.name.lower() == "latex"
 
 	app.build()
 
-	output_file = PathPlus(app.outdir / "python.tex")
+	output_file = PathPlus(app.outdir) / "python.tex"
 	content = str(StringList(output_file.read_lines())).replace("\\sphinxAtStartPar\n", '').replace(". %\n", ".\n")
 	content = re.sub(
 			r"\\sphinxstepexplicit %\n(\\begin{footnote}\[1])\\phantomsection\\label{\\thesphinxscope\.1}%\n\\sphinxAtStartFootnote",

@@ -87,6 +87,7 @@ class TocTreePlusCollector(TocTreeCollector):
 		:param doctree:
 		"""
 
+		assert app.env is not None
 		docname = app.env.docname
 		numentries = [0]  # nonlocal again...
 
@@ -123,6 +124,8 @@ class TocTreePlusCollector(TocTreeCollector):
 
 			entries: List[nodes.Element] = []
 			item: nodes.Element
+
+			assert app.env is not None
 			toctree_plus_types = set(app.env.config.toctree_plus_types)
 
 			for sectionnode in node:
@@ -229,6 +232,7 @@ class TocTreePlusCollector(TocTreeCollector):
 			else:
 				return None
 
+		assert app.env is not None
 		toc = build_toc(doctree)
 
 		if toc:

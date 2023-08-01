@@ -137,7 +137,7 @@ show_error_codes = true
 directives = [ "code-block",]
 
 [tool.dep_checker]
-allowed_unused = [ "jinja2",]
+allowed_unused = [ "jinja2", "sphinx_jinja2_compat",]
 
 [tool.dependency-dash."requirements.txt"]
 order = 10

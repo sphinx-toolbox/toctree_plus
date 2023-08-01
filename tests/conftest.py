@@ -1,10 +1,12 @@
 # stdlib
 import pathlib
 import sys
+from typing import Iterator
 
 # 3rd party
 import pytest
 from bs4 import BeautifulSoup  # type: ignore
+from sphinx.application import Sphinx
 from sphinx.testing.path import path
 
 pytest_plugins = ("sphinx.testing.fixtures", "coincidence")
@@ -16,7 +18,7 @@ if sys.version_info >= (3, 10):
 
 
 @pytest.fixture(scope="session")
-def rootdir():
+def rootdir() -> path:
 	rdir = pathlib.Path(__file__).parent.absolute() / "doc-test"
 	if not (rdir / "test-root").is_dir():
 		(rdir / "test-root").mkdir(parents=True)
@@ -24,13 +26,13 @@ def rootdir():
 
 
 @pytest.fixture()
-def content(app):
+def content(app: Sphinx) -> Iterator[Sphinx]:
 	app.build()
 	yield app
 
 
 @pytest.fixture()
-def page(content, request) -> BeautifulSoup:
+def page(content, request) -> BeautifulSoup:  # noqa: MAN001
 	pagename = request.param
 	c = (content.outdir / pagename).read_text()
 

@@ -42,7 +42,6 @@ known_third_party = [
     "github",
     "html5lib",
     "importlib_metadata",
-    "jinja2",
     "packaging",
     "pytest",
     "pytest_cov",
@@ -55,6 +54,7 @@ known_third_party = [
     "requests",
     "setuptools",
     "sphinx",
+    "sphinx_jinja2_compat",
     "sphinx_toolbox",
 ]
 known_first_party = "sphinxcontrib.toctree_plus"
