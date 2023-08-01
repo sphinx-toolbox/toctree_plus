@@ -125,7 +125,7 @@ class TocTreePlusCollector(TocTreeCollector):
 			item: nodes.Element
 			toctree_plus_types = set(app.env.config.toctree_plus_types)
 
-			for sectionnode in node:  # type: ignore[attr-defined]
+			for sectionnode in node:
 				# find all toctree nodes in this section and add them
 				# to the toc (just copying the toctree node which is then
 				# resolved in self.get_and_resolve_doctree)
