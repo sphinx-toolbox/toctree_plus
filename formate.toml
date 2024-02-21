@@ -57,5 +57,5 @@ known_third_party = [
     "sphinx_jinja2_compat",
     "sphinx_toolbox",
 ]
-known_first_party = "sphinxcontrib.toctree_plus"
+known_first_party = [ "sphinxcontrib_toctree_plus",]
 line_length = 115
