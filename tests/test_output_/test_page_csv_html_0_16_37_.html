@@ -1,3 +1,7 @@
+{% set section = ("section" if docutils_version >= (0, 17) else 'div class="section"') -%}
+{% set end_section = ("section" if docutils_version >= (0, 17) else 'div') -%}
+{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
+{% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
 <!DOCTYPE html>
 <html>
  <head>
@@ -44,7 +48,7 @@ export format for spreadsheets and databases.  CSV format was used for many
 years prior to attempts to describe the format in a standardized way in
         <span class="target" id="index-1">
         </span>
-        <a class="rfc reference external" href="https://tools.ietf.org/html/rfc4180.html">
+        <a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4180.html">
          <strong>
           RFC 4180
          </strong>
@@ -118,7 +122,7 @@ using the
         </a>
         classes.
        </p>
-       <div class="section" id="module-contents">
+       <{{ section }} id="module-contents">
         <span id="csv-contents">
         </span>
         <h2>
@@ -141,13 +145,13 @@ using the
         <span class="target" id="index-2">
         </span>
         <dl class="py function">
-         <dt id="csv.reader">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.reader">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            reader
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -158,9 +162,7 @@ using the
           </em>
           ,
           <em class="sig-param">
-           <span class="n">
-            dialect
-           </span>
+           dialect
            <span class="o">
             =
            </span>
@@ -290,13 +292,13 @@ option is specified (in which case unquoted fields are transformed into floats).
          </dd>
         </dl>
         <dl class="py function">
-         <dt id="csv.writer">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.writer">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            writer
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -307,9 +309,7 @@ option is specified (in which case unquoted fields are transformed into floats).
           </em>
           ,
           <em class="sig-param">
-           <span class="n">
-            dialect
-           </span>
+           dialect
            <span class="o">
             =
            </span>
@@ -435,13 +435,13 @@ All other non-string data are stringified with
          </dd>
         </dl>
         <dl class="py function">
-         <dt id="csv.register_dialect">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.register_dialect">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            register_dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -516,20 +516,18 @@ parameters, see section
          </dd>
         </dl>
         <dl class="py function">
-         <dt id="csv.unregister_dialect">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.unregister_dialect">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            unregister_dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
           <em class="sig-param">
-           <span class="n">
-            name
-           </span>
+           name
           </em>
           <span class="sig-paren">
            )
@@ -561,20 +559,18 @@ parameters, see section
          </dd>
         </dl>
         <dl class="py function">
-         <dt id="csv.get_dialect">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.get_dialect">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            get_dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
           <em class="sig-param">
-           <span class="n">
-            name
-           </span>
+           name
           </em>
           <span class="sig-paren">
            )
@@ -614,13 +610,13 @@ parameters, see section
          </dd>
         </dl>
         <dl class="py function">
-         <dt id="csv.list_dialects">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.list_dialects">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            list_dialects
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -638,13 +634,13 @@ parameters, see section
          </dd>
         </dl>
         <dl class="py function">
-         <dt id="csv.field_size_limit">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.field_size_limit">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            field_size_limit
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -687,16 +683,16 @@ given, this becomes the new limit.
          module defines the following classes:
         </p>
         <dl class="py class">
-         <dt id="csv.DictReader">
+         <dt{{ sig_object_class }} id="csv.DictReader">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            DictReader
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -743,9 +739,7 @@ given, this becomes the new limit.
           </em>
           ,
           <em class="sig-param">
-           <span class="n">
-            dialect
-           </span>
+           dialect
            <span class="o">
             =
            </span>
@@ -904,16 +898,16 @@ to
          </dd>
         </dl>
         <dl class="py class">
-         <dt id="csv.DictWriter">
+         <dt{{ sig_object_class }} id="csv.DictWriter">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            DictWriter
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -954,9 +948,7 @@ to
           </em>
           ,
           <em class="sig-param">
-           <span class="n">
-            dialect
-           </span>
+           dialect
            <span class="o">
             =
            </span>
@@ -1114,16 +1106,16 @@ of the
          </dd>
         </dl>
         <dl class="py class">
-         <dt id="csv.Dialect">
+         <dt{{ sig_object_class }} id="csv.Dialect">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            Dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect" title="Permalink to this definition">
            ¶
           </a>
@@ -1160,16 +1152,16 @@ attributes, which are used to define the parameters for a specific
          </dd>
         </dl>
         <dl class="py class">
-         <dt id="csv.excel">
+         <dt{{ sig_object_class }} id="csv.excel">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            excel
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.excel" title="Permalink to this definition">
            ¶
           </a>
@@ -1196,16 +1188,16 @@ file.  It is registered with the dialect name
          </dd>
         </dl>
         <dl class="py class">
-         <dt id="csv.excel_tab">
+         <dt{{ sig_object_class }} id="csv.excel_tab">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            excel_tab
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.excel_tab" title="Permalink to this definition">
            ¶
           </a>
@@ -1232,16 +1224,16 @@ TAB-delimited file.  It is registered with the dialect name
          </dd>
         </dl>
         <dl class="py class">
-         <dt id="csv.unix_dialect">
+         <dt{{ sig_object_class }} id="csv.unix_dialect">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            unix_dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.unix_dialect" title="Permalink to this definition">
            ¶
           </a>
@@ -1282,16 +1274,16 @@ all fields.  It is registered with the dialect name
          </dd>
         </dl>
         <dl class="py class">
-         <dt id="csv.Sniffer">
+         <dt{{ sig_object_class }} id="csv.Sniffer">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            Sniffer
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Sniffer" title="Permalink to this definition">
            ¶
           </a>
@@ -1320,10 +1312,10 @@ all fields.  It is registered with the dialect name
            class provides two methods:
           </p>
           <dl class="py method">
-           <dt id="csv.Sniffer.sniff">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="csv.Sniffer.sniff">
+            <{{ sig_prename_tag }} class="sig-name descname">
              sniff
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -1377,10 +1369,10 @@ delimiter characters.
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="csv.Sniffer.has_header">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="csv.Sniffer.has_header">
+            <{{ sig_prename_tag }} class="sig-name descname">
              has_header
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -1443,13 +1435,13 @@ delimiter characters.
          module defines the following constants:
         </p>
         <dl class="py data">
-         <dt id="csv.QUOTE_ALL">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.QUOTE_ALL">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            QUOTE_ALL
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.QUOTE_ALL" title="Permalink to this definition">
            ¶
           </a>
@@ -1469,13 +1461,13 @@ delimiter characters.
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="csv.QUOTE_MINIMAL">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.QUOTE_MINIMAL">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            QUOTE_MINIMAL
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.QUOTE_MINIMAL" title="Permalink to this definition">
            ¶
           </a>
@@ -1508,13 +1500,13 @@ special characters such as
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="csv.QUOTE_NONNUMERIC">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.QUOTE_NONNUMERIC">
+          <{{ sig_prename_tag}} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag}}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            QUOTE_NONNUMERIC
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.QUOTE_NONNUMERIC" title="Permalink to this definition">
            ¶
           </a>
@@ -1541,13 +1533,13 @@ special characters such as
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="csv.QUOTE_NONE">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.QUOTE_NONE">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            QUOTE_NONE
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.QUOTE_NONE" title="Permalink to this definition">
            ¶
           </a>
@@ -1610,16 +1602,16 @@ any characters that require escaping are encountered.
          module defines the following exception:
         </p>
         <dl class="py exception">
-         <dt id="csv.Error">
+         <dt{{ sig_object_class }} id="csv.Error">
           <em class="property">
            exception
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csv.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            Error
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Error" title="Permalink to this definition">
            ¶
           </a>
@@ -1630,7 +1622,7 @@ any characters that require escaping are encountered.
           </p>
          </dd>
         </dl>
-       </div>
+       </{{ end_section }}>
        <div class="section" id="dialects-and-formatting-parameters">
         <span id="csv-fmt-params">
         </span>
@@ -1704,13 +1696,13 @@ for the
          Dialects support the following attributes:
         </p>
         <dl class="py attribute">
-         <dt id="csv.Dialect.delimiter">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.delimiter">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            delimiter
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.delimiter" title="Permalink to this definition">
            ¶
           </a>
@@ -1728,13 +1720,13 @@ for the
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.doublequote">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.doublequote">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            doublequote
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.doublequote" title="Permalink to this definition">
            ¶
           </a>
@@ -1807,13 +1799,13 @@ defaults to
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.escapechar">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.escapechar">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            escapechar
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.escapechar" title="Permalink to this definition">
            ¶
           </a>
@@ -1866,13 +1858,13 @@ the following character. It defaults to
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.lineterminator">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.lineterminator">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            lineterminator
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.lineterminator" title="Permalink to this definition">
            ¶
           </a>
@@ -1933,13 +1925,13 @@ future.
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.quotechar">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.quotechar">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            quotechar
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.quotechar" title="Permalink to this definition">
            ¶
           </a>
@@ -1967,13 +1959,13 @@ defaults to
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.quoting">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.quoting">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            quoting
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.quoting" title="Permalink to this definition">
            ¶
           </a>
@@ -2006,13 +1998,13 @@ reader.  It can take on any of the
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.skipinitialspace">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.skipinitialspace">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            skipinitialspace
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.skipinitialspace" title="Permalink to this definition">
            ¶
           </a>
@@ -2041,13 +2033,13 @@ The default is
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.Dialect.strict">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.Dialect.strict">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            Dialect.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            strict
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.Dialect.strict" title="Permalink to this definition">
            ¶
           </a>
@@ -2107,13 +2099,13 @@ The default is
          function) have the following public methods:
         </p>
         <dl class="py method">
-         <dt id="csv.csvreader.__next__">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvreader.__next__">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csvreader.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            __next__
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -2158,13 +2150,13 @@ this as
          Reader objects have the following public attributes:
         </p>
         <dl class="py attribute">
-         <dt id="csv.csvreader.dialect">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvreader.dialect">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csvreader.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.csvreader.dialect" title="Permalink to this definition">
            ¶
           </a>
@@ -2176,13 +2168,13 @@ this as
          </dd>
         </dl>
         <dl class="py attribute">
-         <dt id="csv.csvreader.line_num">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvreader.line_num">
+          <{{ sig_prename_tag}} class="sig-prename descclassname">
            csvreader.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag}}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            line_num
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.csvreader.line_num" title="Permalink to this definition">
            ¶
           </a>
@@ -2198,13 +2190,13 @@ number of records returned, as records can span multiple lines.
          DictReader objects have the following public attribute:
         </p>
         <dl class="py attribute">
-         <dt id="csv.csvreader.fieldnames">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvreader.fieldnames">
+          <{{ sig_prename_tag}} class="sig-prename descclassname">
            csvreader.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag}}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            fieldnames
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.csvreader.fieldnames" title="Permalink to this definition">
            ¶
           </a>
@@ -2279,13 +2271,13 @@ out surrounded by parens. This may cause some problems for other programs which
 read CSV files (assuming they support complex numbers at all).
         </p>
         <dl class="py method">
-         <dt id="csv.csvwriter.writerow">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvwriter.writerow">
+          <{{ sig_prename_tag}} class="sig-prename descclassname">
            csvwriter.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag}}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            writerow
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -2326,13 +2318,13 @@ of the underlying file object.
          </dd>
         </dl>
         <dl class="py method">
-         <dt id="csv.csvwriter.writerows">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvwriter.writerows">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csvwriter.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            writerows
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -2368,13 +2360,13 @@ dialect.
          Writer objects have the following public attribute:
         </p>
         <dl class="py attribute">
-         <dt id="csv.csvwriter.dialect">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.csvwriter.dialect">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            csvwriter.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            dialect
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#csv.csvwriter.dialect" title="Permalink to this definition">
            ¶
           </a>
@@ -2389,13 +2381,13 @@ dialect.
          DictWriter objects have the following public method:
         </p>
         <dl class="py method">
-         <dt id="csv.DictWriter.writeheader">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="csv.DictWriter.writeheader">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            DictWriter.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            writeheader
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -2637,8 +2629,8 @@ on write an extra
           </p>
          </dd>
         </dl>
-       </div>
-      </div>
+       </{{ end_section }}>
+      </{{ end_section }}>
      </div>
     </div>
    </div>

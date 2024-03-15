@@ -1,9 +1,13 @@
+{% set section = ("section" if docutils_version >= (0, 17) else 'div class="section"') -%}
+{% set end_section = ("section" if docutils_version >= (0, 17) else 'div') -%}
+{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
+{% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
 <!DOCTYPE html>
 <html>
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Docutils 0.17: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   <title>
    TocTree Plus Demo — Python  documentation
   </title>
@@ -30,7 +34,7 @@
         </a>
        </h1>
        <div class="toctree-wrapper compound">
-        <p>
+        <p class="caption"{% if sphinx_version >= (4, 5) %} role="heading"{% endif %}>
          <span class="caption-text">
           Contents
          </span>
@@ -176,6 +180,26 @@
                 </span>
                </code>
               </a>
+              <ul>
+               <li class="toctree-l4">
+                <a class="reference internal" href="csv.html#csv.Sniffer.sniff">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   sniff
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="csv.html#csv.Sniffer.has_header">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   has_header
+                  </span>
+                 </code>
+                </a>
+               </li>
+              </ul>
              </li>
              <li class="toctree-l3">
               <a class="reference internal" href="csv.html#csv.QUOTE_ALL">
@@ -229,7 +253,7 @@
               <a class="reference internal" href="csv.html#csv.csvreader.__next__">
                <code class="docutils literal notranslate">
                 <span class="pre">
-                 csvreader.__next__
+                 __next__
                 </span>
                </code>
               </a>
@@ -245,7 +269,7 @@
               <a class="reference internal" href="csv.html#csv.csvwriter.writerow">
                <code class="docutils literal notranslate">
                 <span class="pre">
-                 csvwriter.writerow
+                 writerow
                 </span>
                </code>
               </a>
@@ -254,7 +278,7 @@
               <a class="reference internal" href="csv.html#csv.csvwriter.writerows">
                <code class="docutils literal notranslate">
                 <span class="pre">
-                 csvwriter.writerows
+                 writerows
                 </span>
                </code>
               </a>
@@ -263,7 +287,7 @@
               <a class="reference internal" href="csv.html#csv.DictWriter.writeheader">
                <code class="docutils literal notranslate">
                 <span class="pre">
-                 DictWriter.writeheader
+                 writeheader
                 </span>
                </code>
               </a>
@@ -388,6 +412,80 @@
                 </span>
                </code>
               </a>
+              <ul>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.format">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   format
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.vformat">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   vformat
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.parse">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   parse
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.get_field">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   get_field
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.get_value">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   get_value
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.check_unused_args">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   check_unused_args
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.format_field">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   format_field
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Formatter.convert_field">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   convert_field
+                  </span>
+                 </code>
+                </a>
+               </li>
+              </ul>
              </li>
             </ul>
            </li>
@@ -421,6 +519,26 @@
                 </span>
                </code>
               </a>
+              <ul>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Template.substitute">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   substitute
+                  </span>
+                 </code>
+                </a>
+               </li>
+               <li class="toctree-l4">
+                <a class="reference internal" href="string.html#string.Template.safe_substitute">
+                 <code class="docutils literal notranslate">
+                  <span class="pre">
+                   safe_substitute
+                  </span>
+                 </code>
+                </a>
+               </li>
+              </ul>
              </li>
             </ul>
            </li>
@@ -444,86 +562,23 @@
          </li>
         </ul>
        </div>
-      </section>
-     </div>
-    </div>
-   </div>
-   <div aria-label="main navigation" class="sphinxsidebar" role="navigation">
-    <div class="sphinxsidebarwrapper">
-     <h1 class="logo">
-      <a href="#">
-       Python
-      </a>
-     </h1>
-     <h3>
-      Navigation
-     </h3>
-     <p>
-      <span class="caption-text">
-       Contents
-      </span>
-     </p>
-     <ul>
-      <li class="toctree-l1">
-       <a class="reference internal" href="csv.html">
-        <code class="xref py py-mod docutils literal notranslate">
-         <span class="pre">
-          csv
+       <dl class="py class">
+        <dt class="sig sig-object py" id="name_with_underscores">
+         <em class="property">
+          class
+         </em>
+         <span class="sig-name descname">
+          name_with_underscores
          </span>
-        </code>
-        — CSV File Reading and Writing
-       </a>
-      </li>
-      <li class="toctree-l1">
-       <a class="reference internal" href="string.html">
-        <code class="xref py py-mod docutils literal notranslate">
-         <span class="pre">
-          string
-         </span>
-        </code>
-        — Common string operations
-       </a>
-      </li>
-     </ul>
-     <div class="relations">
-      <h3>
-       Related Topics
-      </h3>
-      <ul>
-       <li>
-        <a href="#">
-         Documentation overview
-        </a>
-        <ul>
-         <li>
-          Next:
-          <a href="csv.html" title="next chapter">
-           <code class="xref py py-mod docutils literal notranslate">
-            <span class="pre">
-             csv
-            </span>
-           </code>
-           — CSV File Reading and Writing
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
+         <a class="headerlink" href="#name_with_underscores" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+        </dd>
+       </dl>
+      </{{ end_section }}>
      </div>
-     <div id="searchbox" role="search" style="display: none">
-      <h3 id="searchlabel">
-       Quick search
-      </h3>
-      <div class="searchformwrapper">
-       <form action="search.html" class="search" method="get">
-        <input aria-labelledby="searchlabel" name="q" type="text"/>
-        <input type="submit" value="Go"/>
-       </form>
-      </div>
-     </div>
-     <script>
-      $('#searchbox').show(0);
-     </script>
     </div>
    </div>
    <div class="clearer">

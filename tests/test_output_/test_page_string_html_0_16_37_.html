@@ -1,3 +1,7 @@
+{% set section = ("section" if docutils_version >= (0, 17) else 'div class="section"') -%}
+{% set end_section = ("section" if docutils_version >= (0, 17) else 'div') -%}
+{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
+{% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
 <!DOCTYPE html>
 <html>
  <head>
@@ -48,13 +52,13 @@
          The constants defined in this module are:
         </p>
         <dl class="py data">
-         <dt id="string.ascii_letters">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.ascii_letters">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            ascii_letters
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.ascii_letters" title="Permalink to this definition">
            ¶
           </a>
@@ -82,13 +86,13 @@
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.ascii_lowercase">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.ascii_lowercase">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            ascii_lowercase
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.ascii_lowercase" title="Permalink to this definition">
            ¶
           </a>
@@ -107,13 +111,13 @@ locale-dependent and will not change.
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.ascii_uppercase">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.ascii_uppercase">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            ascii_uppercase
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.ascii_uppercase" title="Permalink to this definition">
            ¶
           </a>
@@ -132,13 +136,13 @@ locale-dependent and will not change.
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.digits">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.digits">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            digits
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.digits" title="Permalink to this definition">
            ¶
           </a>
@@ -156,13 +160,13 @@ locale-dependent and will not change.
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.hexdigits">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.hexdigits">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            hexdigits
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.hexdigits" title="Permalink to this definition">
            ¶
           </a>
@@ -180,13 +184,13 @@ locale-dependent and will not change.
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.octdigits">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.octdigits">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            octdigits
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.octdigits" title="Permalink to this definition">
            ¶
           </a>
@@ -204,13 +208,13 @@ locale-dependent and will not change.
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.punctuation">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.punctuation">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            punctuation
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.punctuation" title="Permalink to this definition">
            ¶
           </a>
@@ -235,13 +239,13 @@ in the
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.printable">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.printable">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            printable
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.printable" title="Permalink to this definition">
            ¶
           </a>
@@ -287,13 +291,13 @@ and
          </dd>
         </dl>
         <dl class="py data">
-         <dt id="string.whitespace">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.whitespace">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            whitespace
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.whitespace" title="Permalink to this definition">
            ¶
           </a>
@@ -327,7 +331,7 @@ substitutions and value formatting via the
          method described in
          <span class="target" id="index-0">
          </span>
-         <a class="pep reference external" href="https://www.python.org/dev/peps/pep-3101">
+         <a class="pep reference external" href="https://peps.python.org/pep-3101/">
           <strong>
            PEP 3101
           </strong>
@@ -359,16 +363,16 @@ implementation as the built-in
          method.
         </p>
         <dl class="py class">
-         <dt id="string.Formatter">
+         <dt{{ sig_object_class }} id="string.Formatter">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            Formatter
-          </code>
+          </{{ sig_prename_tag }}>
           <a class="headerlink" href="#string.Formatter" title="Permalink to this definition">
            ¶
           </a>
@@ -386,10 +390,10 @@ implementation as the built-in
            class has the following public methods:
           </p>
           <dl class="py method">
-           <dt id="string.Formatter.format">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.format">
+            <{{ sig_prename_tag }} class="sig-name descname">
              format
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -398,15 +402,27 @@ implementation as the built-in
             </em>
             ,
             <em class="sig-param">
-             /
+             <span class="o">
+              /
+             </span>
             </em>
             ,
             <em class="sig-param">
-             *args
+             <span class="o">
+              *
+             </span>
+             <span class="n">
+              args
+             </span>
             </em>
             ,
             <em class="sig-param">
-             **kwargs
+             <span class="o">
+              **
+             </span>
+             <span class="n">
+              kwargs
+             </span>
             </em>
             <span class="sig-paren">
              )
@@ -444,17 +460,15 @@ It is just a wrapper that calls
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Formatter.vformat">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.vformat">
+            <{{ sig_prename_tag }} class="sig-name descname">
              vformat
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
             <em class="sig-param">
-             <span class="n">
-              format_string
-             </span>
+             format_string
             </em>
             ,
             <em class="sig-param">
@@ -519,17 +533,15 @@ methods described below.
 intended to be replaced by subclasses:
           </p>
           <dl class="py method">
-           <dt id="string.Formatter.parse">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.parse">
+            <{{ sig_prename_tag }} class="sig-name descname">
              parse
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
             <em class="sig-param">
-             <span class="n">
-              format_string
-             </span>
+             format_string
             </em>
             <span class="sig-paren">
              )
@@ -600,10 +612,10 @@ field, then the values of
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Formatter.get_field">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.get_field">
+            <{{ sig_prename_tag }} class="sig-name descname">
              get_field
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -650,7 +662,7 @@ an object to be formatted.  Returns a tuple (obj, used_key).  The default
 version takes strings of the form defined in
              <span class="target" id="index-1">
              </span>
-             <a class="pep reference external" href="https://www.python.org/dev/peps/pep-3101">
+             <a class="pep reference external" href="https://peps.python.org/pep-3101/">
               <strong>
                PEP 3101
               </strong>
@@ -693,10 +705,10 @@ version takes strings of the form defined in
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Formatter.get_value">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.get_value">
+            <{{ sig_prename_tag }} class="sig-name descname">
              get_value
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -822,10 +834,10 @@ built-in
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Formatter.check_unused_args">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.check_unused_args">
+            <{{ sig_prename_tag }} class="sig-name descname">
              check_unused_args
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -882,10 +894,10 @@ the check fails.
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Formatter.format_field">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.format_field">
+            <{{ sig_prename_tag }} class="sig-name descname">
              format_field
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -930,10 +942,10 @@ method is provided so that subclasses can override it.
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Formatter.convert_field">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Formatter.convert_field">
+            <{{ sig_prename_tag }} class="sig-name descname">
              convert_field
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
@@ -1038,13 +1050,13 @@ copied unchanged to the output.  If you need to include a brace character in the
 literal text, it can be escaped by doubling:
          <code class="docutils literal notranslate">
           <span class="pre">
-           {{
+           {{"{{"}}
           </span>
          </code>
          and
          <code class="docutils literal notranslate">
           <span class="pre">
-           }}
+           {{"}}"}}
           </span>
          </code>
          .
@@ -1344,7 +1356,7 @@ This allows the formatting of a value to be dynamically specified.
          </a>
          section for some examples.
         </p>
-        <div class="section" id="format-specification-mini-language">
+        <{{ section }} id="format-specification-mini-language">
          <span id="formatspec">
          </span>
          <h3>
@@ -1701,7 +1713,7 @@ instead.
            option (see also
            <span class="target" id="index-7">
            </span>
-           <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0378">
+           <a class="pep reference external" href="https://peps.python.org/pep-0378/">
             <strong>
              PEP 378
             </strong>
@@ -1766,7 +1778,7 @@ error.
            option (see also
            <span class="target" id="index-9">
            </span>
-           <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0515">
+           <a class="pep reference external" href="https://peps.python.org/pep-0515/">
             <strong>
              PEP 515
             </strong>
@@ -2555,8 +2567,8 @@ modifiers.
            </table>
           </div>
          </blockquote>
-        </div>
-        <div class="section" id="format-examples">
+        </{{ end_section }}>
+        <{{ section }} id="format-examples">
          <span id="formatexamples">
          </span>
          <h3>
@@ -2870,7 +2882,7 @@ following examples.
          Template strings provide simpler string substitutions as described in
          <span class="target" id="index-10">
          </span>
-         <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0292">
+         <a class="pep reference external" href="https://peps.python.org/pep-0292/">
           <strong>
            PEP 292
           </strong>
@@ -3012,16 +3024,16 @@ these rules.  The methods of
          are:
         </p>
         <dl class="py class">
-         <dt id="string.Template">
+         <dt{{ sig_object_class }} id="string.Template">
           <em class="property">
            class
           </em>
-          <code class="sig-prename descclassname">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            Template
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -3042,23 +3054,38 @@ these rules.  The methods of
            The constructor takes a single argument which is the template string.
           </p>
           <dl class="py method">
-           <dt id="string.Template.substitute">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Template.substitute">
+            <{{ sig_prename_tag }} class="sig-name descname">
              substitute
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
             <em class="sig-param">
-             mapping={}
+             <span class="n">
+              mapping
+             </span>
+             <span class="o">
+              =
+             </span>
+             <span class="default_value">
+              {}
+             </span>
             </em>
             ,
             <em class="sig-param">
-             /
+             <span class="o">
+              /
+             </span>
             </em>
             ,
             <em class="sig-param">
-             **kwds
+             <span class="o">
+              **
+             </span>
+             <span class="n">
+              kwds
+             </span>
             </em>
             <span class="sig-paren">
              )
@@ -3094,23 +3121,38 @@ and there are duplicates, the placeholders from
            </dd>
           </dl>
           <dl class="py method">
-           <dt id="string.Template.safe_substitute">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Template.safe_substitute">
+            <{{ sig_prename_tag }} class="sig-name descname">
              safe_substitute
-            </code>
+            </{{ sig_prename_tag }}>
             <span class="sig-paren">
              (
             </span>
             <em class="sig-param">
-             mapping={}
+             <span class="n">
+              mapping
+             </span>
+             <span class="o">
+              =
+             </span>
+             <span class="default_value">
+              {}
+             </span>
             </em>
             ,
             <em class="sig-param">
-             /
+             <span class="o">
+              /
+             </span>
             </em>
             ,
             <em class="sig-param">
-             **kwds
+             <span class="o">
+              **
+             </span>
+             <span class="n">
+              kwds
+             </span>
             </em>
             <span class="sig-paren">
              )
@@ -3203,10 +3245,10 @@ placeholders that are not valid Python identifiers.
            instances also provide one public data attribute:
           </p>
           <dl class="py attribute">
-           <dt id="string.Template.template">
-            <code class="sig-name descname">
+           <dt{{ sig_object_class }} id="string.Template.template">
+            <{{ sig_prename_tag }} class="sig-name descname">
              template
-            </code>
+            </{{ sig_prename_tag }}>
             <a class="headerlink" href="#string.Template.template" title="Permalink to this definition">
              ¶
             </a>
@@ -3490,13 +3532,13 @@ delimiter), and it should appear last in the regular expression.
          </a>
         </h2>
         <dl class="py function">
-         <dt id="string.capwords">
-          <code class="sig-prename descclassname">
+         <dt{{ sig_object_class }} id="string.capwords">
+          <{{ sig_prename_tag }} class="sig-prename descclassname">
            string.
-          </code>
-          <code class="sig-name descname">
+          </{{ sig_prename_tag }}>
+          <{{ sig_prename_tag }} class="sig-name descname">
            capwords
-          </code>
+          </{{ sig_prename_tag }}>
           <span class="sig-paren">
            (
           </span>
@@ -3565,8 +3607,8 @@ and leading and trailing whitespace are removed, otherwise
 split and join the words.
           </p>
          </dd>
-        </dl>
-       </div>
+        </{{ end_section }}>
+       </{{ end_section }}>
       </div>
      </div>
     </div>

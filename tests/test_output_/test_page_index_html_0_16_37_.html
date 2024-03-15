@@ -1,3 +1,7 @@
+{% set section = ("section" if docutils_version >= (0, 17) else 'div class="section"') -%}
+{% set end_section = ("section" if docutils_version >= (0, 17) else 'div') -%}
+{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
+{% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
 <!DOCTYPE html>
 <html>
  <head>
@@ -29,7 +33,7 @@
         </a>
        </h1>
        <div class="toctree-wrapper compound">
-        <p class="caption">
+        <p class="caption"{% if sphinx_version >= (4, 5) %} role="heading"{% endif %}>
          <span class="caption-text">
           Contents
          </span>
@@ -558,13 +562,13 @@
         </ul>
        </div>
        <dl class="py class">
-        <dt id="name_with_underscores">
+        <dt{{ sig_object_class }} id="name_with_underscores">
          <em class="property">
           class
          </em>
-         <code class="sig-name descname">
+         <{{ sig_prename_tag }} class="sig-name descname">
           name_with_underscores
-         </code>
+         </{{ sig_prename_tag }}>
          <a class="headerlink" href="#name_with_underscores" title="Permalink to this definition">
           ¶
          </a>

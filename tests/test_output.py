@@ -14,7 +14,7 @@ from domdf_python_tools.compat import importlib_metadata
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.stringlist import StringList
 from sphinx.application import Sphinx
-from sphinx_toolbox.testing import check_html_regression
+from sphinx_toolbox.testing import HTMLRegressionFixture, LaTeXRegressionFixture
 
 
 def test(app: Sphinx) -> None:
@@ -63,13 +63,21 @@ gte_38 = pytest.mark.skipif(
 		])
 @pytest.mark.parametrize("docutils_version", [_param((0, 16)), _param((0, 17))])
 @pytest.mark.parametrize("page", ["index.html", "string.html", "csv.html"], indirect=True)
-def test_page(
-		py_version: str,
-		docutils_version: str,
-		page: BeautifulSoup,
-		advanced_file_regression: AdvancedFileRegressionFixture,
-		):
-	check_html_regression(page, advanced_file_regression)
+def test_page(py_version: str, docutils_version: str, page: BeautifulSoup, html_regression: HTMLRegressionFixture):
+
+	if page.filename == "csv.html":
+		for div in page.select("dt em.sig-param span.n"):
+			if div.text in {"new_limit", "dialect", "name", "**fmtparams"}:
+				div.replace_with(div.text)
+	if page.filename == "string.html":
+		for div in page.select("dt em.sig-param span.n"):
+			if div.text in {"**kwds", "format_string", "*args", '/'}:
+				div.replace_with(div.text)
+		# for div in page.select("em.sig-param span.o, em.sig-param span.n"):
+		# 	if div.text in {"/", "*args", "**kwargs"}:
+		# 		div.replace_with(div.text)
+
+	html_regression.check(page, jinja2=True)
 
 
 @pytest.mark.parametrize("py_version", [
@@ -77,11 +85,7 @@ def test_page(
 		pytest.param("38", marks=lt_38),
 		])
 @pytest.mark.sphinx("latex", srcdir="test-root")
-def test_latex_output(
-		app: Sphinx,
-		py_version: str,
-		advanced_file_regression: AdvancedFileRegressionFixture,
-		):
+def test_latex_output(app: Sphinx, py_version: str, latex_regression: LaTeXRegressionFixture):
 
 	assert app.builder is not None
 
@@ -90,14 +94,11 @@ def test_latex_output(
 	app.build()
 
 	output_file = PathPlus(app.outdir) / "python.tex"
-	content = str(StringList(output_file.read_lines())).replace("\\sphinxAtStartPar\n", '').replace(". %\n", ".\n")
+	content = str(output_file.read_text()).replace("\\sphinxAtStartPar\n", '').replace(". %\n", ".\n")
 	content = re.sub(
 			r"\\sphinxstepexplicit %\n(\\begin{footnote}\[1])\\phantomsection\\label{\\thesphinxscope\.1}%\n\\sphinxAtStartFootnote",
 			"\n\\1\\\\sphinxAtStartFootnote",
 			content,
 			)
 
-	advanced_file_regression.check(
-			re.sub(r"\\date{.*}", r"\\date{Mar 11, 2021}", content),
-			extension=".tex",
-			)
+	latex_regression.check(content, jinja2=True)

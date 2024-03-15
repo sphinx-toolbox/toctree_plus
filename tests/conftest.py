@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup  # type: ignore
 from sphinx.application import Sphinx
 from sphinx.testing.path import path
 
-pytest_plugins = ("sphinx.testing.fixtures", "coincidence")
+pytest_plugins = ("sphinx.testing.fixtures", "sphinx_toolbox.testing", "coincidence")
 
 if sys.version_info >= (3, 10):
 	# stdlib
@@ -36,4 +36,7 @@ def page(content, request) -> BeautifulSoup:  # noqa: MAN001
 	pagename = request.param
 	c = (content.outdir / pagename).read_text()
 
-	yield BeautifulSoup(c, "html5lib")
+	soup = BeautifulSoup(c, "html5lib")
+	soup.filename = pagename
+
+	yield soup
