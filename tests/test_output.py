@@ -9,10 +9,8 @@ from typing import Tuple
 # 3rd party
 import pytest
 from bs4 import BeautifulSoup  # type: ignore
-from coincidence.regressions import AdvancedFileRegressionFixture
 from domdf_python_tools.compat import importlib_metadata
 from domdf_python_tools.paths import PathPlus
-from domdf_python_tools.stringlist import StringList
 from sphinx.application import Sphinx
 from sphinx_toolbox.testing import HTMLRegressionFixture, LaTeXRegressionFixture
 
