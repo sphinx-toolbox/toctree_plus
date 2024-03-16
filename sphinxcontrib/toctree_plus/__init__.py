@@ -181,11 +181,11 @@ class TocTreePlusCollector(TocTreeCollector):
 							# Has no anchor
 							continue
 
-						title = attributes.get("fullname", sectionnode.children[0].astext())
+						section_title: str = attributes.get("fullname", sectionnode.children[0].astext())
 
 						if sectionnode.attributes["objtype"] in {"method", "attribute"}:
 							# TODO: remove special case
-							title = title.split('.', 1)[-1]
+							section_title = section_title.split('.', 1)[-1]
 
 						anchorname = f'#{attributes["ids"][0]}'
 
@@ -195,7 +195,7 @@ class TocTreePlusCollector(TocTreeCollector):
 								internal=True,
 								refuri=docname,
 								anchorname=anchorname,
-								*[nodes.literal(text=title)],
+								*[nodes.literal(text=section_title)],
 								)
 						para = addnodes.compact_paragraph('', '', reference)
 						item = nodes.list_item('', para)
