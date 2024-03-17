@@ -5,7 +5,7 @@ from typing import Iterator
 
 # 3rd party
 import pytest
-from bs4 import BeautifulSoup  # type: ignore
+from bs4 import BeautifulSoup  # type: ignore[import-untyped]
 from sphinx.application import Sphinx
 from sphinx.testing.path import path
 

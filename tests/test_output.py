@@ -8,7 +8,7 @@ from typing import Tuple
 
 # 3rd party
 import pytest
-from bs4 import BeautifulSoup  # type: ignore
+from bs4 import BeautifulSoup  # type: ignore[import-untyped]
 from domdf_python_tools.compat import importlib_metadata
 from domdf_python_tools.paths import PathPlus
 from sphinx.application import Sphinx
