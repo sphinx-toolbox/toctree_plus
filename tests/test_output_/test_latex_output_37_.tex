@@ -118,6 +118,11 @@
 \makeindex
 \begin{document}
 
+<% if sphinx_version >= (5, 0) %>\ifdefined\shorthandoff
+  \ifnum\catcode`\=\string=\active\shorthandoff{=}\fi
+  \ifnum\catcode`\"=\active\shorthandoff{"}\fi
+\fi<% endif %>
+
 \pagestyle{empty}
 \sphinxmaketitle
 \pagestyle{plain}
@@ -1621,7 +1626,7 @@ non\sphinxhyphen{}empty format specification typically modifies the result.
 
 If a valid \sphinxstyleemphasis{align} value is specified, it can be preceded by a \sphinxstyleemphasis{fill}
 character that can be any character and defaults to a space if omitted.
-It is not possible to use a literal curly brace (<< '”' if docutils_version < (0, 19) else '“' >>\sphinxcode{\sphinxupquote{\{}}” or “\sphinxcode{\sphinxupquote{\}}}”) as
+It is not possible to use a literal curly brace (<< '”' if sphinx_version >= (5, 0) else '“' >>\sphinxcode{\sphinxupquote{\{}}” or “\sphinxcode{\sphinxupquote{\}}}”) as
 the \sphinxstyleemphasis{fill} character in a \DUrole{xref,std,std-ref}{formatted string literal} or when using the \sphinxcode{\sphinxupquote{str.format()}}
 method.  However, it is possible to insert a curly brace
 with a nested replacement field.  This limitation doesn’t
@@ -1632,29 +1637,34 @@ The meaning of the various alignment options is as follows:
 
 \index{\textless{} (less)@\spxentry{\textless{}}\spxextra{less}!in string formatting@\spxentry{in string formatting}}\index{\textgreater{} (greater)@\spxentry{\textgreater{}}\spxextra{greater}!in string formatting@\spxentry{in string formatting}}\index{= (equals)@\spxentry{=}\spxextra{equals}!in string formatting@\spxentry{in string formatting}}\index{\textasciicircum{} (caret)@\spxentry{\textasciicircum{}}\spxextra{caret}!in string formatting@\spxentry{in string formatting}}\ignorespaces
 
-\begin{savenotes}\sphinxattablestart
+\begin{savenotes}\sphinxattablestart<% if sphinx_version >= (5, 0) %>
+\sphinxthistablewithglobalstyle<% endif %>
 \centering
 \phantomsection\label{\detokenize{string:index-3}}\nobreak
-\begin{tabulary}{\linewidth}[t]{|T|T|}
-\hline
+\begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
+\sphinxtoprule<% endif %>
 \sphinxstyletheadfamily
 Option
 &\sphinxstyletheadfamily
 Meaning
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxmidrule
+\sphinxtableatstartofbodyhook<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}\textless{}\textquotesingle{}}}
 &
 Forces the field to be left\sphinxhyphen{}aligned within the available
 space (this is the default for most objects).
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}\textgreater{}\textquotesingle{}}}
 &
 Forces the field to be right\sphinxhyphen{}aligned within the
 available space (this is the default for numbers).
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}=\textquotesingle{}}}
 &
 Forces the padding to be placed after the sign (if any)
@@ -1662,16 +1672,18 @@ but before the digits.  This is used for printing fields
 in the form ‘+000000120’. This alignment option is only
 valid for numeric types.  It becomes the default when ‘0’
 immediately precedes the field width.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}\textasciicircum{}\textquotesingle{}}}
 &
 Forces the field to be centered within the available
 space.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxbottomrule<% else %>
+\hline<% endif %>
 \end{tabulary}
-\par
+<% if sphinx_version >= (5, 0) %>\sphinxtableafterendhook<% endif %>\par
 \sphinxattableend\end{savenotes}
 \end{quote}
 
@@ -1685,37 +1697,44 @@ following:
 
 \index{+ (plus)@\spxentry{+}\spxextra{plus}!in string formatting@\spxentry{in string formatting}}\index{\sphinxhyphen{} (minus)@\spxentry{\sphinxhyphen{}}\spxextra{minus}!in string formatting@\spxentry{in string formatting}}\index{space@\spxentry{space}!in string formatting@\spxentry{in string formatting}}\ignorespaces
 
-\begin{savenotes}\sphinxattablestart
+\begin{savenotes}\sphinxattablestart<% if sphinx_version >= (5, 0) %>
+\sphinxthistablewithglobalstyle<% endif %>
 \centering
 \phantomsection\label{\detokenize{string:index-4}}\nobreak
-\begin{tabulary}{\linewidth}[t]{|T|T|}
-\hline
+\begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
+\sphinxtoprule<% else %>
+\hline<% endif %>
 \sphinxstyletheadfamily
 Option
 &\sphinxstyletheadfamily
 Meaning
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxmidrule
+\sphinxtableatstartofbodyhook<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}+\textquotesingle{}}}
 &
 indicates that a sign should be used for both
 positive as well as negative numbers.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}\sphinxhyphen{}\textquotesingle{}}}
 &
 indicates that a sign should be used only for negative
 numbers (this is the default behavior).
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 space
 &
 indicates that a leading space should be used on
 positive numbers, and a minus sign on negative numbers.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxbottomrule<% else %>
+\hline<% endif %>
 \end{tabulary}
-\par
+<% if sphinx_version >= (5, 0) %>\sphinxtableafterendhook<% endif %>\par
 \sphinxattableend\end{savenotes}
 \end{quote}
 
@@ -1772,28 +1791,34 @@ The available string presentation types are:
 
 
 \begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
 \centering
-\begin{tabulary}{\linewidth}[t]{|T|T|}
-\hline
+\begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
+\sphinxtoprule<% else %>
+\hline<% endif %>
 \sphinxstyletheadfamily
 Type
 &\sphinxstyletheadfamily
 Meaning
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxmidrule
+\sphinxtableatstartofbodyhook<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}s\textquotesingle{}}}
 &
 String format. This is the default type for strings and
 may be omitted.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 None
 &
 The same as \sphinxcode{\sphinxupquote{\textquotesingle{}s\textquotesingle{}}}.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxbottomrule<% else %>
+\hline<% endif %>
 \end{tabulary}
-\par
+<% if sphinx_version >= (5, 0) %>\sphinxtableafterendhook<% endif %>\par
 \sphinxattableend\end{savenotes}
 \end{quote}
 
@@ -1802,62 +1827,74 @@ The available integer presentation types are:
 
 
 \begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
 \centering
-\begin{tabulary}{\linewidth}[t]{|T|T|}
-\hline
+\begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
+\sphinxtoprule<% else %>
+\hline<% endif %>
 \sphinxstyletheadfamily
 Type
 &\sphinxstyletheadfamily
 Meaning
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxmidrule
+\sphinxtableatstartofbodyhook<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}b\textquotesingle{}}}
 &
 Binary format. Outputs the number in base 2.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}c\textquotesingle{}}}
 &
 Character. Converts the integer to the corresponding
 unicode character before printing.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}d\textquotesingle{}}}
 &
 Decimal Integer. Outputs the number in base 10.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}o\textquotesingle{}}}
 &
 Octal format. Outputs the number in base 8.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}x\textquotesingle{}}}
 &
 Hex format. Outputs the number in base 16, using
 lower\sphinxhyphen{}case letters for the digits above 9.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}X\textquotesingle{}}}
 &
 Hex format. Outputs the number in base 16, using
 upper\sphinxhyphen{}case letters for the digits above 9.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}n\textquotesingle{}}}
 &
 Number. This is the same as \sphinxcode{\sphinxupquote{\textquotesingle{}d\textquotesingle{}}}, except that it uses
 the current locale setting to insert the appropriate
 number separator characters.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 None
 &
 The same as \sphinxcode{\sphinxupquote{\textquotesingle{}d\textquotesingle{}}}.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxbottomrule<% else %>
+\hline<% endif %>
 \end{tabulary}
-\par
+<% if sphinx_version >= (5, 0) %>\sphinxtableafterendhook<% endif %>\par
 \sphinxattableend\end{savenotes}
 \end{quote}
 
@@ -1871,40 +1908,48 @@ The available presentation types for floating point and decimal values are:
 
 
 \begin{savenotes}\sphinxattablestart
+\sphinxthistablewithglobalstyle
 \centering
-\begin{tabulary}{\linewidth}[t]{|T|T|}
-\hline
+\begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
+\sphinxtoprule<% else %>
+\hline<% endif %>
 \sphinxstyletheadfamily
 Type
 &\sphinxstyletheadfamily
 Meaning
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxmidrule
+\sphinxtableatstartofbodyhook<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}e\textquotesingle{}}}
 &
 Exponent notation. Prints the number in scientific
 notation using the letter ‘e’ to indicate the exponent.
 The default precision is \sphinxcode{\sphinxupquote{6}}.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}E\textquotesingle{}}}
 &
 Exponent notation. Same as \sphinxcode{\sphinxupquote{\textquotesingle{}e\textquotesingle{}}} except it uses an
 upper case ‘E’ as the separator character.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}f\textquotesingle{}}}
 &
 Fixed\sphinxhyphen{}point notation. Displays the number as a
 fixed\sphinxhyphen{}point number.  The default precision is \sphinxcode{\sphinxupquote{6}}.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}F\textquotesingle{}}}
 &
 Fixed\sphinxhyphen{}point notation. Same as \sphinxcode{\sphinxupquote{\textquotesingle{}f\textquotesingle{}}}, but converts
 \sphinxcode{\sphinxupquote{nan}} to  \sphinxcode{\sphinxupquote{NAN}} and \sphinxcode{\sphinxupquote{inf}} to \sphinxcode{\sphinxupquote{INF}}.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}g\textquotesingle{}}}
 &
 General format.  For a given precision \sphinxcode{\sphinxupquote{p \textgreater{}= 1}},
@@ -1932,28 +1977,32 @@ the precision.
 
 A precision of \sphinxcode{\sphinxupquote{0}} is treated as equivalent to a
 precision of \sphinxcode{\sphinxupquote{1}}.  The default precision is \sphinxcode{\sphinxupquote{6}}.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}G\textquotesingle{}}}
 &
 General format. Same as \sphinxcode{\sphinxupquote{\textquotesingle{}g\textquotesingle{}}} except switches to
 \sphinxcode{\sphinxupquote{\textquotesingle{}E\textquotesingle{}}} if the number gets too large. The
 representations of infinity and NaN are uppercased, too.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}n\textquotesingle{}}}
 &
 Number. This is the same as \sphinxcode{\sphinxupquote{\textquotesingle{}g\textquotesingle{}}}, except that it uses
 the current locale setting to insert the appropriate
 number separator characters.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 \sphinxcode{\sphinxupquote{\textquotesingle{}\%\textquotesingle{}}}
 &
 Percentage. Multiplies the number by 100 and displays
 in fixed (\sphinxcode{\sphinxupquote{\textquotesingle{}f\textquotesingle{}}}) format, followed by a percent sign.
-\\
-\hline
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxhline<% else %>
+\hline<% endif %>
 None
 &
 Similar to \sphinxcode{\sphinxupquote{\textquotesingle{}g\textquotesingle{}}}, except that fixed\sphinxhyphen{}point notation,
@@ -1963,9 +2012,9 @@ the particular value. The overall effect is to match the
 output of \sphinxcode{\sphinxupquote{str()}} as altered by the other format
 modifiers.
 \\
-\hline
+\sphinxbottomrule
 \end{tabulary}
-\par
+<% if sphinx_version >= (5, 0) %>\sphinxtableafterendhook<% endif %>\par
 \sphinxattableend\end{savenotes}
 \end{quote}
 
