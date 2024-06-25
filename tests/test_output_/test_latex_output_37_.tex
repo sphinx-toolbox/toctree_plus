@@ -121,9 +121,9 @@
 <% if sphinx_version >= (5, 0) %>\ifdefined\shorthandoff
   \ifnum\catcode`\=\string=\active\shorthandoff{=}\fi
   \ifnum\catcode`\"=\active\shorthandoff{"}\fi
-\fi<% endif %>
+\fi
 
-\pagestyle{empty}
+<% endif %>\pagestyle{empty}
 \sphinxmaketitle
 \pagestyle{plain}
 \sphinxtableofcontents
@@ -1626,7 +1626,7 @@ non\sphinxhyphen{}empty format specification typically modifies the result.
 
 If a valid \sphinxstyleemphasis{align} value is specified, it can be preceded by a \sphinxstyleemphasis{fill}
 character that can be any character and defaults to a space if omitted.
-It is not possible to use a literal curly brace (<< '”' if sphinx_version >= (5, 0) else '“' >>\sphinxcode{\sphinxupquote{\{}}” or “\sphinxcode{\sphinxupquote{\}}}”) as
+It is not possible to use a literal curly brace (<< '”' >>\sphinxcode{\sphinxupquote{\{}}” or “\sphinxcode{\sphinxupquote{\}}}”) as
 the \sphinxstyleemphasis{fill} character in a \DUrole{xref,std,std-ref}{formatted string literal} or when using the \sphinxcode{\sphinxupquote{str.format()}}
 method.  However, it is possible to insert a curly brace
 with a nested replacement field.  This limitation doesn’t
@@ -1642,7 +1642,8 @@ The meaning of the various alignment options is as follows:
 \centering
 \phantomsection\label{\detokenize{string:index-3}}\nobreak
 \begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
-\sphinxtoprule<% endif %>
+\sphinxtoprule<% else %>
+\hline<% endif %>
 \sphinxstyletheadfamily
 Option
 &\sphinxstyletheadfamily
@@ -1790,8 +1791,8 @@ The available string presentation types are:
 \begin{quote}
 
 
-\begin{savenotes}\sphinxattablestart
-\sphinxthistablewithglobalstyle
+\begin{savenotes}\sphinxattablestart<% if sphinx_version >= (5, 0) %>
+\sphinxthistablewithglobalstyle<% endif %>
 \centering
 \begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
 \sphinxtoprule<% else %>
@@ -1826,8 +1827,8 @@ The available integer presentation types are:
 \begin{quote}
 
 
-\begin{savenotes}\sphinxattablestart
-\sphinxthistablewithglobalstyle
+\begin{savenotes}\sphinxattablestart<% if sphinx_version >= (5, 0) %>
+\sphinxthistablewithglobalstyle<% endif %>
 \centering
 \begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
 \sphinxtoprule<% else %>
@@ -1907,8 +1908,8 @@ The available presentation types for floating point and decimal values are:
 \begin{quote}
 
 
-\begin{savenotes}\sphinxattablestart
-\sphinxthistablewithglobalstyle
+\begin{savenotes}\sphinxattablestart<% if sphinx_version >= (5, 0) %>
+\sphinxthistablewithglobalstyle<% endif %>
 \centering
 \begin{tabulary}{\linewidth}[t]{|T|T|}<% if sphinx_version >= (5, 0) %>
 \sphinxtoprule<% else %>
@@ -2011,8 +2012,9 @@ The default precision is as high as needed to represent
 the particular value. The overall effect is to match the
 output of \sphinxcode{\sphinxupquote{str()}} as altered by the other format
 modifiers.
-\\
-\sphinxbottomrule
+\\<% if sphinx_version >= (5, 0) %>
+\sphinxbottomrule<% else %>
+\hline<% endif %>
 \end{tabulary}
 <% if sphinx_version >= (5, 0) %>\sphinxtableafterendhook<% endif %>\par
 \sphinxattableend\end{savenotes}
