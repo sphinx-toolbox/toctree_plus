@@ -100,7 +100,7 @@
 .. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/toctree_plus
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/toctree_plus/v0.6.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/toctree_plus/v0.7.0
 	:target: https://github.com/sphinx-toolbox/toctree_plus/pulse
 	:alt: GitHub commits since tagged version
 
