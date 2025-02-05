@@ -5,7 +5,7 @@ from typing import Iterator
 
 # 3rd party
 import pytest
-from bs4 import BeautifulSoup  # type: ignore[import-untyped]
+from bs4 import BeautifulSoup
 from sphinx.application import Sphinx
 from sphinx.testing.path import path
 
@@ -32,11 +32,11 @@ def content(app: Sphinx) -> Iterator[Sphinx]:
 
 
 @pytest.fixture()
-def page(content, request) -> BeautifulSoup:  # noqa: MAN001
+def page(content, request) -> Iterator[BeautifulSoup]:  # noqa: MAN001
 	pagename = request.param
 	c = (content.outdir / pagename).read_text()
 
 	soup = BeautifulSoup(c, "html5lib")
-	soup.filename = pagename
+	soup.filename = pagename  # type: ignore[attr-defined]
 
 	yield soup
