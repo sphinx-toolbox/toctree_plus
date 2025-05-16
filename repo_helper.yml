@@ -64,3 +64,6 @@ exclude_files:
 
 mypy_deps:
  - types-docutils
+
+tox_unmanaged:
+ - testenv
