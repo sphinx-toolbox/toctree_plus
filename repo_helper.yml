@@ -12,10 +12,10 @@ license: 'BSD'
 short_desc: 'Enhanced Sphinx TocTree which shows classes, functions etc. as if they were sections.'
 
 use_whey: True
-python_deploy_version: 3.8
+python_deploy_version: 3.9
 preserve_custom_theme: true
 docs_fail_on_warning: true
-mypy_version: "1.8.0"
+mypy_version: 1.16
 
 conda_channels:
  - conda-forge
