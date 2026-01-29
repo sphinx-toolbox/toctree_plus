@@ -7,4 +7,4 @@ License
 .. license-info:: BSD-3-Clause
 
 .. license::
-	:py: toctree_plus
+	:py: toctree-plus

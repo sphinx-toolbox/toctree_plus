@@ -69,20 +69,20 @@
 	:target: https://www.codefactor.io/repository/github/sphinx-toolbox/toctree_plus
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/toctree_plus
-	:target: https://pypi.org/project/toctree_plus/
+.. |pypi-version| image:: https://img.shields.io/pypi/v/toctree-plus
+	:target: https://pypi.org/project/toctree-plus/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/toctree_plus?logo=python&logoColor=white
-	:target: https://pypi.org/project/toctree_plus/
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/toctree-plus?logo=python&logoColor=white
+	:target: https://pypi.org/project/toctree-plus/
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/toctree_plus
-	:target: https://pypi.org/project/toctree_plus/
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/toctree-plus
+	:target: https://pypi.org/project/toctree-plus/
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/toctree_plus
-	:target: https://pypi.org/project/toctree_plus/
+.. |wheel| image:: https://img.shields.io/pypi/wheel/toctree-plus
+	:target: https://pypi.org/project/toctree-plus/
 	:alt: PyPI - Wheel
 
 .. |conda-version| image:: https://img.shields.io/conda/v/domdfcoding/toctree_plus?logo=anaconda
@@ -108,11 +108,11 @@
 	:target: https://github.com/sphinx-toolbox/toctree_plus/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2025
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2026
 	:alt: Maintenance
 
-.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/toctree_plus
-	:target: https://pypi.org/project/toctree_plus/
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/toctree-plus
+	:target: https://pypistats.org/packages/toctree-plus
 	:alt: PyPI - Downloads
 
 .. end shields
@@ -139,7 +139,7 @@ To install with ``pip``:
 
 .. code-block:: bash
 
-	$ python -m pip install toctree_plus
+	$ python -m pip install toctree-plus
 
 To install with ``conda``:
 
