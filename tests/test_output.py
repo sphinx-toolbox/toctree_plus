@@ -37,10 +37,10 @@ def _param(version: Tuple[int, int]):  # noqa: MAN002
 			marks=pytest.mark.skipif(
 					docutils_version != version,
 					reason="Difference in output between docutils versions (current version {}.{})".format(
-							*docutils_version
+							*docutils_version,
 							),
 					),
-			id="{}.{}".format(*version)
+			id="{}.{}".format(*version),
 			)
 
 
@@ -55,10 +55,13 @@ gte_38 = pytest.mark.skipif(
 		)
 
 
-@pytest.mark.parametrize("py_version", [
-		pytest.param("37", marks=gte_38),
-		pytest.param("38", marks=lt_38),
-		])
+@pytest.mark.parametrize(
+		"py_version",
+		[
+				pytest.param("37", marks=gte_38),
+				pytest.param("38", marks=lt_38),
+				],
+		)
 @pytest.mark.parametrize("docutils_version", [_param((0, 16)), _param((0, 17))])
 @pytest.mark.parametrize("page", ["index.html", "string.html", "csv.html"], indirect=True)
 def test_page(py_version: str, docutils_version: str, page: BeautifulSoup, html_regression: HTMLRegressionFixture):
@@ -78,10 +81,13 @@ def test_page(py_version: str, docutils_version: str, page: BeautifulSoup, html_
 	html_regression.check(page, jinja2=True)
 
 
-@pytest.mark.parametrize("py_version", [
-		pytest.param("37", marks=gte_38),
-		pytest.param("38", marks=lt_38),
-		])
+@pytest.mark.parametrize(
+		"py_version",
+		[
+				pytest.param("37", marks=gte_38),
+				pytest.param("38", marks=lt_38),
+				],
+		)
 @pytest.mark.sphinx("latex", srcdir="test-root")
 def test_latex_output(app: Sphinx, py_version: str, latex_regression: LaTeXRegressionFixture):
 

@@ -275,7 +275,7 @@ def visit_desc(translator: LaTeXTranslator, node: addnodes.desc) -> None:
 			translator.body.append(f"\\phantomsection\\stepcounter{{{sectiontype}}}\n")
 			translator.body.append(
 					"\\addcontentsline{toc}{%s}{\\protect\\numberline{\\the%s}{%s}}\n" %
-					(sectiontype, sectiontype, title)
+					(sectiontype, sectiontype, title),
 					)
 
 	if translator.table:
