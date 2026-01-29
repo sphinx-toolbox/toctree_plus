@@ -71,22 +71,22 @@
 		:alt: CodeFactor Grade
 
 	.. |pypi-version| pypi-shield::
-		:project: toctree_plus
+		:project: toctree-plus
 		:version:
 		:alt: PyPI - Package Version
 
 	.. |supported-versions| pypi-shield::
-		:project: toctree_plus
+		:project: toctree-plus
 		:py-versions:
 		:alt: PyPI - Supported Python Versions
 
 	.. |supported-implementations| pypi-shield::
-		:project: toctree_plus
+		:project: toctree-plus
 		:implementations:
 		:alt: PyPI - Supported Implementations
 
 	.. |wheel| pypi-shield::
-		:project: toctree_plus
+		:project: toctree-plus
 		:wheel:
 		:alt: PyPI - Wheel
 
@@ -114,11 +114,11 @@
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2025
+	.. |maintained| maintained-shield:: 2026
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
-		:project: toctree_plus
+		:project: toctree-plus
 		:downloads: month
 		:alt: PyPI - Downloads
 
